@@ -1,0 +1,123 @@
+/* TAB FILTER */
+
+.tab-filter {
+    background: white;
+    padding: 8px;
+    border-radius: 25px;
+    display: inline-flex;
+    gap: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.tab.active {
+    background: #f0e9ff;
+}
+
+
+/* REMINDER ITEM */
+
+.reminder-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.time {
+    font-size: 12px;
+    color: #555;
+}
+
+.reminder-info h4 {
+    font-weight: 600;
+}
+
+.reminder-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+
+/* DONE BUTTON */
+
+.btn-done {
+    background: #cfd8ff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+
+/* FUTURE */
+
+.future-card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* TIPS */
+
+.tips-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tips-card img {
+    width: 80px;
+}
+
+
+/* WEEKLY */
+
+.weekly-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.days {
+    display: flex;
+    gap: 6px;
+}
+
+.day {
+    background: #eee;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.day.active {
+    background: #ffc8d8;
+}
+
+.day.blue {
+    background: #a6c8ff;
+}
+
+.weekly-bar {
+    height: 8px;
+    background: #cfd8ff;
+    border-radius: 10px;
+    margin-top: 6px;
+}

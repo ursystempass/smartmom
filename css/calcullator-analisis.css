@@ -1,0 +1,95 @@
+/* RESULT CARD */
+
+.result-card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* SCORE CIRCLE */
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#ffb6d9, #c9b5ff, #8bb4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+
+/* STATUS BAR */
+
+.status-bar {
+    background: #ffdcdc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    display: flex;
+    gap: 6px;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.pink {
+    background: #f8a5c2;
+}
+
+.purple {
+    background: #c9b5ff;
+}
+
+.blue {
+    background: #8bb4ff;
+}
+
+
+/* MINI CARDS */
+
+.mini-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mini-card span {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* RECOMMEND */
+
+.recommend-card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recommend-bar {
+    width: 180px;
+    height: 20px;
+    background: #8fa2ff;
+    border-radius: 20px;
+    margin-top: 10px;
+}

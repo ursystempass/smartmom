@@ -1,0 +1,53 @@
+/* AGE TAB */
+
+.age-tab {
+    background: #e8e3f4;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.age-tab.active {
+    background: #e6b6d6;
+}
+
+.age-tab.purple {
+    background: #d7c9ff;
+}
+
+
+/* TIMELINE CARD */
+
+.timeline-card {
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-card h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-card img {
+    width: 120px;
+    margin: auto;
+}
+
+.timeline-card p {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #555;
+}
+
+
+/* NEXT CARD */
+
+.next-card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}

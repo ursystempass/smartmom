@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartMom Register</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/sign up.css">
+
+</head>
+
+<body class="bg-gray-300 min-h-screen flex items-center justify-center">
+
+<!-- Logo -->
+<div class="absolute top-8 left-10 flex items-center gap-2">
+    <img src="logo.png" class="w-10">
+    <span class="text-pink-400 font-semibold text-lg">SmartMom</span>
+</div>
+
+<!-- Card -->
+<div class="outer-card">
+
+    <h1 class="title">Buat Akun Baru</h1>
+    <p class="subtitle">Mulai perjalanan sehat si kecil hari ini</p>
+
+    <div class="inner-card">
+
+        <form>
+
+            <label>Nama Lengkap</label>
+            <input type="text" class="input">
+
+            <label>Email</label>
+            <input type="email" class="input">
+
+            <label>Password</label>
+
+            <div class="relative">
+                <input type="password" id="password" class="input pr-20">
+
+                <span onclick="togglePassword()" 
+                class="show-pass">
+                Tampilkan
+                </span>
+            </div>
+
+            <button type="submit" class="btn-daftar">
+                Daftar
+            </button>
+
+            <p class="login-text">
+                Sudah punya akun? 
+                <a href="/html/sign in.html">Masuk</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="/js/sign up.js"></script>
+
+</body>
+</html>

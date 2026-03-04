@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hasil Analisis Pertumbuhan</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/calcullator-analisis.css">
+
+</head>
+
+<body class="bg-[#e9e7f2]">
+
+    <!-- NAVBAR -->
+    <header class="flex items-center gap-3 px-10 py-6">
+
+        <img src="img/logo.png" class="w-8">
+        <h1 class="font-bold tracking-wide">SMARTMOM</h1>
+
+    </header>
+
+
+    <div class="flex">
+
+        <!-- SIDEBAR -->
+        <div class="flex flex-col gap-6 items-center pl-6 pt-20">
+
+            <div class="side-icon"></div>
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="flex-1 px-10">
+
+            <h1 class="text-3xl font-bold mb-2">
+                Hasil Analisis Pertumbuhan
+            </h1>
+
+            <p class="text-gray-600 mb-6">
+                Hore! Pantau tumbuh kembang si kecil disini
+            </p>
+
+
+            <!-- SCORE CARD -->
+            <div class="result-card flex items-center gap-10">
+
+                <!-- SCORE CIRCLE -->
+                <div class="score-circle">
+                    <span>82</span>
+                </div>
+
+
+                <div>
+
+                    <h2 class="text-lg font-semibold">
+                        Maryam - 12 Bulan
+                    </h2>
+
+                    <div class="status-bar">
+                        Status : <b>Pertumbuhan Normal</b>
+                    </div>
+
+                    <div class="progress-bar mt-4">
+
+                        <div class="progress pink"></div>
+                        <div class="progress purple"></div>
+                        <div class="progress blue"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MINI CARDS -->
+            <div class="grid grid-cols-3 gap-6 mt-8">
+
+                <div class="mini-card">
+                    <p class="font-semibold">Berat Badan</p>
+                    <span>Normal</span>
+                </div>
+
+                <div class="mini-card">
+                    <p class="font-semibold">Tinggi Badan</p>
+                    <span>Normal</span>
+                </div>
+
+                <div class="mini-card">
+                    <p class="font-semibold">Lingkar Kepala</p>
+                    <span>Normal</span>
+                </div>
+
+            </div>
+
+
+            <!-- REKOMENDASI -->
+            <div class="recommend-card mt-8">
+
+                <h3 class="font-semibold mb-3">
+                    Rekomendasi untuk Mom
+                </h3>
+
+                <ul class="text-sm text-gray-700 space-y-2">
+
+                    <li>Tambahkan protein hewani seperti telur & ikan</li>
+                    <li>Ajak Maryam bermain yang melatih keseimbangan</li>
+                    <li>Jadwal imunisasi berikutnya 15 bulan</li>
+
+                </ul>
+
+                <div class="recommend-bar"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/js/calcullator-analisis.js"></script>
+
+</body>
+
+</html>

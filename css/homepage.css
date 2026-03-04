@@ -1,0 +1,125 @@
+body{
+font-family:sans-serif;
+}
+
+
+/* NAV */
+.nav-btn{
+background:#e8e5f4;
+padding:6px 16px;
+border-radius:20px;
+cursor:pointer;
+}
+
+
+/* HERO IMAGE */
+.hero-img{
+border-radius:30px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* SIDEBAR ICON */
+.side-icon{
+width:40px;
+height:40px;
+background:#e3dcff;
+border-radius:10px;
+}
+
+
+/* REMINDER */
+.reminder-card{
+background:#efe9ff;
+padding:20px;
+border-radius:30px;
+box-shadow:0 12px 20px rgba(0,0,0,0.2);
+}
+
+.reminder-title{
+font-weight:700;
+margin-bottom:10px;
+}
+
+.reminder-item{
+background:white;
+padding:10px;
+border-radius:12px;
+margin-bottom:10px;
+font-size:13px;
+display:flex;
+justify-content:space-between;
+}
+
+
+/* TAG */
+.tag{
+font-size:10px;
+padding:3px 10px;
+border-radius:20px;
+}
+
+.orange{background:#ffd9b3;}
+.green{background:#c8f5d0;}
+.purple{background:#e5d8ff;}
+
+
+/* FEATURE */
+.feature-card{
+background:#e9e4ff;
+padding:20px;
+border-radius:30px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.big{
+grid-column:span 1;
+}
+
+.feature-title{
+font-size:20px;
+font-weight:700;
+}
+
+.feature-title-small{
+font-weight:700;
+margin-bottom:10px;
+}
+
+
+/* BUTTON */
+.btn-main{
+background:linear-gradient(90deg,#8e7dff,#f3b1d3);
+color:white;
+padding:8px 18px;
+border-radius:20px;
+}
+
+.btn-secondary{
+background:white;
+padding:8px 16px;
+border-radius:20px;
+margin-top:10px;
+}
+
+
+/* CHECKLIST */
+.checklist{
+font-size:13px;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+
+/* ARTICLE */
+.article{
+display:flex;
+gap:10px;
+margin-bottom:10px;
+}
+
+.article img{
+width:60px;
+border-radius:10px;
+}

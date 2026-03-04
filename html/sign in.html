@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMom Sign In</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css/sing in.css">
+</head>
+
+<body class="bg-gray-300 min-h-screen flex items-center justify-center">
+
+    <!-- Logo kiri -->
+    <div class="absolute top-8 left-10 flex items-center gap-2">
+        <img src="logo.png" class="w-10">
+        <span class="text-pink-400 font-semibold text-lg">SmartMom</span>
+    </div>
+
+    <!-- Card utama -->
+    <div class="outer-card">
+
+        <img src="logo.png" class="w-14 mx-auto mb-2">
+
+        <h1 class="title">Welcome Back</h1>
+        <p class="subtitle">Masuk untuk memantau tumbuh kembang si kecil</p>
+
+        <div class="inner-card">
+
+            <form>
+
+                <label>Email</label>
+                <input type="email" class="input">
+
+                <label>Password</label>
+
+                <div class="relative">
+                    <input type="password" id="password" class="input pr-20">
+
+                    <span onclick="togglePassword()" class="show-pass">
+                        Tampilkan
+                    </span>
+                </div>
+
+                <button class="btn-daftar">
+                    Masuk
+                </button>
+
+                <p class="login-text">
+                    Belum punya akun?
+                    <a href="sign up.html">Daftar Sekarang</a>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

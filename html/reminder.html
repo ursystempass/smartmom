@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reminder SmartMom</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/reminder.css">
+
+</head>
+
+<body class="bg-[#e9e7f2]">
+
+    <!-- NAVBAR -->
+    <header class="flex items-center gap-3 px-10 py-6">
+        <img src="img/logo.png" class="w-8">
+        <h1 class="font-bold tracking-wide">SMARTMOM</h1>
+    </header>
+
+
+    <div class="flex">
+
+        <!-- SIDEBAR -->
+        <div class="flex flex-col gap-6 items-center pl-6 pt-20">
+
+            <div class="side-icon"></div>
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="flex-1 px-10">
+
+            <h1 class="text-3xl font-bold mb-2">
+                Reminder SMARTMOM
+            </h1>
+
+            <p class="text-gray-600 mb-6">
+                Jadwal penting si kecil dan pengingat untuk Mom
+            </p>
+
+
+            <!-- TAB FILTER -->
+            <div class="tab-filter mb-6">
+
+                <button class="tab active">Semua</button>
+                <button class="tab">Imunisasi</button>
+                <button class="tab">MPASI</button>
+                <button class="tab">Cek Kontrol</button>
+
+            </div>
+
+
+            <div class="grid grid-cols-3 gap-8">
+
+                <!-- LEFT SIDE -->
+                <div class="col-span-2">
+
+                    <h3 class="font-semibold mb-4">
+                        Pengingat Hari ini - 26 Februari 2026
+                    </h3>
+
+
+                    <!-- ITEM -->
+                    <div class="reminder-item">
+
+                        <div class="time">
+                            09.00 <br> a.m
+                        </div>
+
+                        <div class="reminder-info">
+
+                            <h4>Imunisasi DPT ke-3</h4>
+                            <p>Puskesmas Harapan Ibu</p>
+
+                        </div>
+
+                        <button class="btn-done">
+                            Selesai
+                        </button>
+
+                    </div>
+
+
+                    <div class="reminder-item">
+
+                        <div class="time">
+                            16.00 <br> p.m
+                        </div>
+
+                        <div class="reminder-info">
+
+                            <h4>Stimulasi Motorik</h4>
+                            <p>Ajak Marya, tengkurap</p>
+
+                        </div>
+
+                        <button class="btn-done">
+                            Selesai
+                        </button>
+
+                    </div>
+
+
+                    <div class="reminder-item">
+
+                        <div class="time">
+                            19.00 <br> p.m
+                        </div>
+
+                        <div class="reminder-info">
+
+                            <h4>MPASI – Bubur Bayi (Sesi 2)</h4>
+                            <p>Menu : Bubur Wortel + Ayam</p>
+
+                        </div>
+
+                        <button class="btn-done">
+                            Selesai
+                        </button>
+
+                    </div>
+
+
+                    <!-- TIPS -->
+                    <div class="tips-card mt-6">
+
+                        <div>
+                            <h4 class="font-semibold mb-1">Tips untuk Mom</h4>
+                            <p class="text-sm">
+                                Pantau tumbuh kembang Maryam secara rutin,
+                                setiap bulan catat berat & tinggi badannya.
+                            </p>
+                        </div>
+
+                        <img src="/assets/baby_1.png">
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+                <div>
+
+                    <h3 class="font-semibold mb-4">
+                        Pengingat Mendatang
+                    </h3>
+
+                    <div class="future-card">
+                        <b>01 Mei 2024</b>
+                        <p>Cek Pertumbuhan Bulanan</p>
+                        <span>Posyandu Anggrek</span>
+                    </div>
+
+                    <div class="future-card">
+                        <b>15 Mei 2024</b>
+                        <p>Imunisasi Campak</p>
+                    </div>
+
+                    <div class="future-card">
+                        <b>20 Mei 2024</b>
+                        <p>Evaluasi MPASI</p>
+                    </div>
+
+
+                    <!-- WEEKLY -->
+                    <div class="weekly-card mt-6">
+
+                        <h4 class="font-semibold mb-2">
+                            Pengingat Stimulasi Mingguan
+                        </h4>
+
+                        <div class="days">
+
+                            <span class="day active">Sen</span>
+                            <span class="day">Sel</span>
+                            <span class="day blue">Rab</span>
+                            <span class="day">Kam</span>
+                            <span class="day">Jum</span>
+                            <span class="day">Sab</span>
+                            <span class="day">Min</span>
+
+                        </div>
+
+                        <p class="text-sm mt-2">
+                            Aktif : 3x seminggu
+                        </p>
+
+                        <div class="weekly-bar"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/js/reminder.js"></script>
+
+</body>
+
+</html>

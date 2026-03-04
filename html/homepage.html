@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMom Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/homepage.css">
+
+</head>
+
+<body class="bg-gray-200">
+
+    <!-- NAVBAR -->
+    <header class="flex justify-between items-center px-10 py-6">
+
+        <div class="flex items-center gap-2">
+            <img src="img/logo.png" class="w-8">
+            <h1 class="font-bold text-gray-700 tracking-wide">SMARTMOM</h1>
+        </div>
+
+        <nav class="flex gap-4 text-sm">
+            <a class="nav-btn">Home</a>
+            <a class="nav-btn">Future</a>
+            <a class="nav-btn">About</a>
+            <a class="nav-btn">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="grid grid-cols-3 px-10 gap-10">
+
+        <!-- ICON SIDEBAR -->
+        <div class="flex flex-col gap-6 items-center pt-20">
+
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+
+        </div>
+
+
+        <!-- IMAGE -->
+        <div>
+            <img src="/assets/gambar 1.jpg" class="hero-img">
+        </div>
+
+
+        <!-- REMINDER CARD -->
+        <div class="reminder-card">
+
+            <h2 class="reminder-title">Reminder!</h2>
+
+            <p class="text-xs mb-4">Progress Reminder</p>
+
+            <div class="reminder-item">
+                Belum isi kalkulator bulan ini
+                <span class="tag orange">Pending</span>
+            </div>
+
+            <div class="reminder-item">
+                Update berat badan bulan ini
+                <span class="tag green">Selesai</span>
+            </div>
+
+            <div class="reminder-item">
+                Bulan ini fokus stimulasi merangkak
+                <span class="tag purple">Prioritas</span>
+            </div>
+
+            <div class="reminder-item">
+                Cek perkembangan motorik halus
+            </div>
+
+            <div class="reminder-item">
+                Baca: MPASI usia 6-8 bulan
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="grid grid-cols-3 gap-6 px-10 mt-10 pb-10">
+
+        <!-- KALKULATOR -->
+        <div class="feature-card big">
+
+            <h2 class="feature-title">Kalkulator tumbuh kembang</h2>
+
+            <p class="text-sm text-gray-500 mb-4">
+                Pantau berat & tinggi badan si kecil secara otomatis sesuai usia
+            </p>
+
+            <a href="calcullator-input.html">
+                <button class="btn-main">
+                    Mulai hitung sekarang
+                </button>
+            </a>
+
+            <div class="flex gap-6 mt-6 text-sm text-gray-600">
+                <span>Status bulan ini:</span>
+                <span>Usia anak:</span>
+            </div>
+
+        </div>
+
+
+        <!-- CHECKLIST -->
+        <div class="feature-card">
+
+            <h3 class="feature-title-small">Checklist Milestone</h3>
+
+            <ul class="checklist">
+                <li>Sudah duduk tanpa bantuan</li>
+                <li>Sudah merangkak</li>
+                <li>Sudah merespon suara</li>
+                <li>Sudah bisa menggenggam mainan</li>
+            </ul>
+
+            <button class="btn-secondary">
+                3/4 Terselesaikan
+            </button>
+
+        </div>
+
+
+        <!-- ARTIKEL -->
+        <div class="feature-card">
+
+            <h3 class="feature-title-small">
+                Rekomendasi untuk si kecil
+            </h3>
+
+            <div class="article">
+                <img src="img/article1.jpg">
+                <div>
+                    <p>5 cara menstimulasi motorik halus bayi</p>
+                </div>
+            </div>
+
+            <div class="article">
+                <img src="img/article2.jpg">
+                <div>
+                    <p>Panduan MPASI untuk pemula</p>
+                </div>
+            </div>
+
+            <button class="btn-secondary mt-4">
+                Lihat semua artikel
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="/js/homepage.js"></script>
+
+</body>
+
+</html>
