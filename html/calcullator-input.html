@@ -59,10 +59,10 @@
                 <div class="form-card">
 
                     <h3 class="form-title">Nama Anak</h3>
-                    <input type="text" class="input">
+                    <input type="text" id="namaAnak" class="input">
 
                     <h3 class="form-title">Tanggal Lahir</h3>
-                    <input type="date" class="input">
+                    <input type="date" id="tglLahir" class="input">
 
                     <p class="text-sm text-gray-500 mt-2">
                         Usia anak : 16 bulan
@@ -78,7 +78,7 @@
                     </div>
 
                     <h3 class="form-title mt-4">Tanggal Pengukuran</h3>
-                    <input type="date" class="input">
+                    <input type="date" id="tglUkur" class="input">
 
                 </div>
 
@@ -91,14 +91,13 @@
                     </h3>
 
                     <label>Berat Badan (kg)</label>
-                    <input type="number" class="input">
+                    <input type="number" id="berat" class="input">
 
                     <label>Tinggi badan (cm)</label>
-                    <input type="number" class="input">
+                    <input type="number" id="tinggi" class="input">
 
                     <label>Lingkar kepala (cm)</label>
-                    <input type="number" class="input">
-
+                    <input type="number" id="kepala" class="input">
                 </div>
 
             </div>
@@ -107,11 +106,9 @@
             <!-- BUTTON -->
             <div class="flex justify-center mt-10 pb-10">
 
-                <a href="calcullator-analisis.html">
-                    <button class="btn-main">
-                        Mulai hitung sekarang
-                    </button>
-                </a>
+                <button class="btn-main" id="btnSimpan">
+                    Mulai hitung sekarang
+                </button>
 
             </div>
 
@@ -119,7 +116,56 @@
     </div>
 
     <script src="/js/calcullator-input.js"></script>
+    <script>
 
+        /* =========================
+        DATABASE CALCULATOR INPUT
+        ========================= */
+
+        const btn = document.getElementById("btnSimpan");
+
+        btn.addEventListener("click", function () {
+
+            const nama = document.getElementById("namaAnak").value;
+            const tglLahir = document.getElementById("tglLahir").value;
+            const tglUkur = document.getElementById("tglUkur").value;
+
+            const berat = document.getElementById("berat").value;
+            const tinggi = document.getElementById("tinggi").value;
+            const kepala = document.getElementById("kepala").value;
+
+
+            /* buat object database */
+
+            const dataAnak = {
+
+                nama: nama,
+                tglLahir: tglLahir,
+                tglUkur: tglUkur,
+
+                pengukuran: {
+
+                    berat: berat,
+                    tinggi: tinggi,
+                    kepala: kepala
+
+                }
+
+            };
+
+
+            /* simpan database */
+
+            localStorage.setItem("data_anak", JSON.stringify(dataAnak));
+
+
+            /* pindah ke halaman analisis */
+
+            window.location.href = "calcullator-analisis.html";
+
+        });
+
+    </script>
 </body>
 
 </html>

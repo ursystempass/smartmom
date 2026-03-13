@@ -52,10 +52,10 @@
             <!-- TAB USIA -->
             <div class="flex gap-4 mb-8">
 
-                <button class="age-tab">0 - 3 bulan</button>
-                <button class="age-tab active">4 - 6 Bulan</button>
-                <button class="age-tab">7 - 9 Bulan</button>
-                <button class="age-tab">10 - 12 Bulan</button>
+                <button class="age-tab" data-age="0-3">0 - 3 bulan</button>
+                <button class="age-tab active" data-age="4-6">4 - 6 Bulan</button>
+                <button class="age-tab" data-age="7-9">7 - 9 Bulan</button>
+                <button class="age-tab" data-age="10-12">10 - 12 Bulan</button>
 
                 <div class="ml-auto age-tab purple">
                     Usia 4 Bulan
@@ -65,8 +65,7 @@
 
 
             <!-- MILESTONE CARDS -->
-            <div class="grid grid-cols-4 gap-6">
-
+            <div id="timelineContainer" class="grid grid-cols-4 gap-6">
                 <!-- CARD -->
                 <div class="timeline-card">
 

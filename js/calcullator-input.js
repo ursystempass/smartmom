@@ -1,13 +1,94 @@
-const genderButtons = document.querySelectorAll(".gender");
+document.addEventListener("DOMContentLoaded", function () {
 
-genderButtons.forEach(btn => {
+    let data = JSON.parse(localStorage.getItem("data_anak"));
 
-btn.addEventListener("click", () => {
+    const namaInput = document.getElementById("namaAnak");
+    const lahirInput = document.getElementById("tglLahir");
+    const tglUkurInput = document.getElementById("tglUkur");
 
-genderButtons.forEach(b => b.classList.remove("active"));
+    const beratInput = document.getElementById("berat");
+    const tinggiInput = document.getElementById("tinggi");
+    const kepalaInput = document.getElementById("kepala");
 
-btn.classList.add("active");
+    const genderButtons = document.querySelectorAll(".gender");
 
-});
+
+    /* =====================
+    CEK DATA ANAK
+    ===================== */
+
+    if (data) {
+
+        namaInput.value = data.nama;
+        lahirInput.value = data.tglLahir;
+
+        namaInput.disabled = true;
+        lahirInput.disabled = true;
+
+    }
+
+
+    /* =====================
+    PILIH GENDER
+    ===================== */
+
+    genderButtons.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            genderButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+        });
+
+    });
+
+
+    /* =====================
+    SIMPAN DATA
+    ===================== */
+
+    document.getElementById("btnSimpan").addEventListener("click", function () {
+
+        let gender = "";
+
+        genderButtons.forEach(btn => {
+            if (btn.classList.contains("active")) {
+                gender = btn.innerText;
+            }
+        });
+
+
+        let dataAnak = JSON.parse(localStorage.getItem("data_anak"));
+
+        if (!dataAnak) {
+
+            dataAnak = {
+
+                nama: namaInput.value,
+                tglLahir: lahirInput.value,
+                gender: gender,
+                pengukuran: []
+
+            };
+
+        }
+
+
+        dataAnak.pengukuran.push({
+
+            tgl: tglUkurInput.value,
+            berat: beratInput.value,
+            tinggi: tinggiInput.value,
+            kepala: kepalaInput.value
+
+        });
+
+
+        localStorage.setItem("data_anak", JSON.stringify(dataAnak));
+
+        window.location.href = "calcullator-analisis.html";
+
+    });
 
 });

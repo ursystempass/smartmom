@@ -1,73 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SmartMom Register</title>
+    <title>SmartMom Register</title>
 
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
-<!-- CSS -->
-<link rel="stylesheet" href="/smartmom/css/sign up.css">
+    <link rel="stylesheet" href="/css/sign up.css">
 
 </head>
 
 <body class="signup-bg min-h-screen flex items-center justify-center">
 
-<!-- Logo -->
-<div class="logo-box">
-    <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
-    <span>SmartMom</span>
-</div>
+    <div class="logo-box">
+        <img src="/assets/Logo_smartmom-removebg-preview.png">
+        <span>SmartMom</span>
+    </div>
 
-<!-- Card -->
-<div class="outer-card">
+    <div class="outer-card">
 
-<h1 class="title">Buat Akun Baru</h1>
-<p class="subtitle">Mulai perjalanan sehat si kecil hari ini</p>
+        <h1 class="title">Buat Akun Baru</h1>
+        <p class="subtitle">Mulai perjalanan sehat si kecil hari ini</p>
 
-<div class="inner-card">
+        <div class="inner-card">
+
+            <form id="registerForm">
+
+                <label>Nama Lengkap</label>
+                <input type="text" id="nama" class="input">
+
+                <label>Email</label>
+                <input type="email" id="email" class="input">
+
+                <label>Password</label>
+
+                <div class="password-field">
+
+                    <input type="password" id="password" class="input">
+
+                    <button type="button" onclick="togglePassword()" class="show-pass">
+                        <i data-feather="eye" id="eyeIcon"></i>
+                    </button>
+
+                </div>
+
+                <button type="submit" class="btn-daftar">
+                    Daftar
+                </button>
+
+                <p class="login-text">
+                    Sudah punya akun?
+                    <a href="sign in.html">Masuk</a>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
 
 
-<form id="registerForm">
-<label>Nama Lengkap</label>
-<input type="text" class="input">
+    <!-- POPUP -->
+    <div id="popupRegister" class="popup-overlay">
 
-<label>Email</label>
-<input type="email" class="input">
+        <div class="popup-card">
 
-<label>Password</label>
+            <div class="popup-icon">✓</div>
 
-<div class="password-field">
-    <input type="password" id="password" class="input">
+            <h3>Akun berhasil dibuat</h3>
 
-    <button type="button" onclick="togglePassword()" class="show-pass">
-        <i data-feather="eye" id="eyeIcon"></i>
-    </button>
-</div>
+            <p>Silakan login untuk melanjutkan</p>
 
-<button type="submit" class="btn-daftar">
-Daftar
-</button>
+            <button onclick="goToLogin()" class="popup-btn">
+                Login Sekarang
+            </button>
 
-<p class="login-text">
-Sudah punya akun?
-<a href="/smartmom/html/sign in.html">Masuk</a>
-</p>
+        </div>
+    </div>
+    <script src="/js/sign up.js"></script>
 
-</form>
+    <script>
 
-</div>
+        feather.replace()
 
-</div>
+        function togglePassword() {
 
-<script src="https://unpkg.com/feather-icons"></script>
+            const password = document.getElementById("password");
+            const icon = document.getElementById("eyeIcon");
 
-<script>
-feather.replace()
-</script>
+            if (password.type === "password") {
+                password.type = "text";
+                icon.setAttribute("data-feather", "eye-off");
+            } else {
+                password.type = "password";
+                icon.setAttribute("data-feather", "eye");
+            }
+
+            feather.replace();
+        }
+
+
+        const registerForm = document.getElementById("registerForm");
+
+        registerForm.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const user = {
+                nama: nama,
+                email: email,
+                password: password
+            };
+
+            localStorage.setItem("smartmom_user", JSON.stringify(user));
+
+            document
+                .getElementById("popupRegister")
+                .classList
+                .add("active");
+
+        });
+
+
+        function goToLogin() {
+
+            window.location.href = "sign in.html";
+
+        }
+
+    </script>
+
 </body>
+
 </html>

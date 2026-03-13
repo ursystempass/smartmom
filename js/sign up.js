@@ -1,26 +1,32 @@
-function togglePassword(){
+document.addEventListener("DOMContentLoaded", function () {
 
-const password = document.getElementById("password");
-const icon = document.getElementById("eyeIcon");
+    const registerForm = document.getElementById("registerForm");
 
-if(password.type === "password"){
+    registerForm.addEventListener("submit", function (e) {
 
-password.type = "text";
-icon.setAttribute("data-feather","eye-off");
+        e.preventDefault();
 
-}else{
+        const nama = document.getElementById("nama").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-password.type = "password";
-icon.setAttribute("data-feather","eye");
+        const user = {
+            nama: nama,
+            email: email,
+            password: password
+        };
 
-}
+        localStorage.setItem("smartmom_user", JSON.stringify(user));
 
-feather.replace();
-document.getElementById("registerForm").addEventListener("submit", function(e){
+        document
+            .getElementById("popupRegister")
+            .classList
+            .add("active");
 
-e.preventDefault();
-
-window.location.href = "/html/home.html";
+    });
 
 });
+
+function goToLogin() {
+    window.location.href = "sign in.html";
 }
