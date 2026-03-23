@@ -8,60 +8,57 @@
     <title>Data Anak - SmartMom</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/smartmom/css/calcullator-input.css">
+    <link rel="stylesheet" href="/css/calcullator-input.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 
 </head>
 
 <body class="bg-gray-200">
-
-    <!-- NAVBAR -->
     <header class="flex items-center gap-3 px-10 py-6">
 
-        <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png" class="w-8">
+        <img src="/assets/Logo_smartmom-removebg-preview.png" class="w-8">
         <h1 class="font-bold text-gray-700 tracking-wide">SMARTMOM</h1>
 
     </header>
 
 
     <div class="flex">
-
-        <!-- SIDEBAR ICON -->
         <aside class="sidebar">
 
             <div class="menu">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon home.png">
+                <a href="/html/homepage.html" class="menu-item">
+                    <img src="/assets/icon home.png">
+                    <span>Dashboard</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon kalku.png">
+                <a href="/html/calcullator-input.html" class="menu-item">
+                    <img src="/assets/icon kalku.png">
+                    <span>Kalkulator</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon reminderr.png">
+                <a href="/html/reminder.html" class="menu-item">
+                    <img src="/assets/icon reminderr.png">
+                    <span>Reminder</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon artikell.png">
+                <a href="/html/timeline.html" class="menu-item">
+                    <img src="/assets/icon artikell.png">
+                    <span>Timeline</span>
                 </a>
-
-                
-
+                <a href="/html/profile.html" class="menu-item">
+                    <img src="/assets/profile icon.png">
+                    <span>Profile</span>
+                </a>
             </div>
 
-            <div class="profile">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/profile icon.png">
+            <div class="bottom">
+                <a class="menu-item logout">
+                    <img src="/assets/logout.png">
+                    <span>Log Out</span>
                 </a>
-
             </div>
 
         </aside>
-
-
-        <!-- CONTENT -->
         <div class="flex-1 px-10">
 
             <div class="flex justify-between mb-6">
@@ -74,12 +71,15 @@
                     Lengkapi data untuk melihat <b>Growth Score</b>
                 </p>
 
+                <p style="color:gray; max-width:500px; font-size:14px;">
+                    Masukkan data anak dengan benar untuk mendapatkan hasil analisis
+                    pertumbuhan yang akurat berdasarkan usia dan pengukuran terbaru.
+                </p>
+
             </div>
 
 
             <div class="grid grid-cols-2 gap-10">
-
-                <!-- DATA ANAK -->
                 <div class="form-card">
 
                     <h3 class="form-title">Nama Anak</h3>
@@ -87,10 +87,6 @@
 
                     <h3 class="form-title">Tanggal Lahir</h3>
                     <input type="date" id="tglLahir" class="input">
-
-                    <p class="text-sm text-gray-500 mt-2">
-                        Usia anak : 16 bulan
-                    </p>
 
                     <h3 class="form-title mt-4">Jenis Kelamin</h3>
 
@@ -105,9 +101,6 @@
                     <input type="date" id="tglUkur" class="input">
 
                 </div>
-
-
-                <!-- DATA PENGUKURAN -->
                 <div class="form-card">
 
                     <h3 class="text-lg font-semibold mb-4">
@@ -125,71 +118,18 @@
                 </div>
 
             </div>
-
-
-            <!-- BUTTON -->
             <div class="flex justify-center mt-10 pb-10">
 
                 <button class="btn-main" id="btnSimpan">
-                    Mulai hitung sekarang
-                </button>
+                    Hitung Pertumbuhan Anak </button>
 
             </div>
 
         </div>
     </div>
 
-    <script src="/smartmom/js/calcullator-input.js"></script>
-    <script>
-
-        /* =========================
-        DATABASE CALCULATOR INPUT
-        ========================= */
-
-        const btn = document.getElementById("btnSimpan");
-
-        btn.addEventListener("click", function () {
-
-            const nama = document.getElementById("namaAnak").value;
-            const tglLahir = document.getElementById("tglLahir").value;
-            const tglUkur = document.getElementById("tglUkur").value;
-
-            const berat = document.getElementById("berat").value;
-            const tinggi = document.getElementById("tinggi").value;
-            const kepala = document.getElementById("kepala").value;
-
-
-            /* buat object database */
-
-            const dataAnak = {
-
-                nama: nama,
-                tglLahir: tglLahir,
-                tglUkur: tglUkur,
-
-                pengukuran: {
-
-                    berat: berat,
-                    tinggi: tinggi,
-                    kepala: kepala
-
-                }
-
-            };
-
-
-            /* simpan database */
-
-            localStorage.setItem("data_anak", JSON.stringify(dataAnak));
-
-
-            /* pindah ke halaman analisis */
-
-            window.location.href = "calcullator-analisis.html";
-
-        });
-
-    </script>
+    <script src="/js/calcullator-input.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 
 </html>

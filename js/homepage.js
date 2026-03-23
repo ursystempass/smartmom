@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    console.log("Homepage aktif");
-
     /* =========================
        CEK LOGIN
     ========================= */
@@ -10,40 +8,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!loginStatus) {
         window.location.href = "/html/sign in.html";
+        return;
     }
 
+    const user = JSON.parse(localStorage.getItem("smartmom_user"));
 
+    if (!user) {
+        window.location.href = "/html/sign in.html";
+        return;
+    }
 
     /* =========================
-       AMBIL DATA ANAK
+       GREETING USER
     ========================= */
 
-    const data = JSON.parse(localStorage.getItem("data_anak"));
+    const logoText = document.querySelector(".logo span");
+
+    if (logoText && user.nama) {
+        logoText.innerText = "Hi, " + user.nama;
+    }
+
+    /* =========================
+       DATA ANAK
+    ========================= */
+
+    const data = user.anak;
 
     const emptyState = document.getElementById("emptyState");
     const cardsSection = document.getElementById("cardsSection");
 
-    if (data) {
+    if (!data) {
 
-        emptyState.style.display = "none";
-        cardsSection.style.display = "";
+        // BELUM ADA DATA
+        if (emptyState) emptyState.style.display = "block";
+        if (cardsSection) cardsSection.style.display = "none";
+
+    } else {
+
+        // ADA DATA
+        if (emptyState) emptyState.style.display = "none";
+        if (cardsSection) cardsSection.style.display = "grid";
+
+        /* =========================
+           HITUNG USIA
+        ========================= */
 
         const lahir = new Date(data.tglLahir);
         const sekarang = new Date();
 
-        let bulan =
+        let usiaBulan =
             (sekarang.getFullYear() - lahir.getFullYear()) * 12 +
             (sekarang.getMonth() - lahir.getMonth());
 
-        document.getElementById("usiaAnak").innerText = bulan + " bulan";
+        const usiaEl = document.getElementById("usiaAnak");
 
-        document.getElementById("updateTerakhir").innerText = data.tglUkur;
+        if (usiaEl) {
+            usiaEl.innerText = usiaBulan + " bulan";
+        }
 
-        document.getElementById("statusBulan").innerText = "Sudah diisi";
+        /* =========================
+           UPDATE TERAKHIR
+        ========================= */
 
+        if (data.pengukuran && data.pengukuran.length > 0) {
+
+            const terakhir = data.pengukuran[data.pengukuran.length - 1];
+
+            const updateEl = document.getElementById("updateTerakhir");
+
+            if (updateEl) {
+                updateEl.innerText = terakhir.tgl;
+            }
+        }
     }
-
-
 
     /* =========================
        LOGOUT SYSTEM
@@ -54,53 +91,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const cancelBtn = document.getElementById("cancelLogout");
     const confirmBtn = document.getElementById("confirmLogout");
 
-    logoutBtn.addEventListener("click", function () {
-
-        popup.classList.add("active");
-
-    });
-
-    cancelBtn.addEventListener("click", function () {
-
-        popup.classList.remove("active");
-
-    });
-
-    confirmBtn.addEventListener("click", function () {
-
-        localStorage.removeItem("login_status");
-
-        window.location.href = "/html/sign in.html";
-
-    });
-
-
-
-    /* =========================
-       MILESTONE PROGRESS
-    ========================= */
-
-    const checkboxes = document.querySelectorAll(".milestone input");
-    const progressText = document.getElementById("milestoneProgress");
-
-    function updateProgress() {
-
-        let total = checkboxes.length;
-        let checked = 0;
-
-        checkboxes.forEach(box => {
-
-            if (box.checked) checked++;
-
+    if (logoutBtn && popup) {
+        logoutBtn.addEventListener("click", function () {
+            popup.classList.add("active");
         });
-
-        progressText.innerText = checked + "/" + total + " Terselesaikan";
-
     }
 
-    checkboxes.forEach(box => {
+    if (cancelBtn && popup) {
+        cancelBtn.addEventListener("click", function () {
+            popup.classList.remove("active");
+        });
+    }
 
-        box.addEventListener("change", updateProgress);
+    if (confirmBtn) {
+        confirmBtn.addEventListener("click", function () {
+
+            localStorage.removeItem("login_status");
+
+            window.location.href = "/html/landingpage.html";
+        });
+    }
+
+    /* =========================
+       SIDEBAR ACTIVE
+    ========================= */
+
+    const menuItems = document.querySelectorAll(".menu-item");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    menuItems.forEach(item => {
+
+        const link = item.getAttribute("href");
+
+        if (link && link.includes(currentPage)) {
+            item.classList.add("active");
+        }
 
     });
 

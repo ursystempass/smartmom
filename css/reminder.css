@@ -1,24 +1,39 @@
-/* ================= GLOBAL ================= */
-
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     color: #333;
+    margin-left: 140px !important;
+    padding:20px 40px 40px 40px;
+}
+
+@media (max-width:1024px){
+    body{
+        margin-left:100px !important;
+        padding:60px;
+    }
 }
 
 @media (max-width:768px){
+    body{
+        margin-left:80px !important;
+        padding:40px;
+    }
 
-.main-content{
-margin-left:70px;
+    .main-content{
+        margin-left:0;
+    }
+
+    .sidebar{
+        width:70px;
+    }
 }
 
-.sidebar{
-width:70px;
+@media (max-width:600px){
+    body{
+        margin-left:60px !important;
+        padding:20px;
+    }
 }
-
-}
-
-/* ================= NAVBAR ================= */
 
 .navbar {
     display: flex;
@@ -38,97 +53,10 @@ width:70px;
     width: 34px;
 }
 
-
-
-/* ================= LAYOUT ================= */
-
 .layout {
     display: flex;
+    padding-left:20px;
 }
-
-
-
-/* ================= SIDEBAR ================= */
-
-/* SIDEBAR */
-
-.sidebar{
-position:fixed;
-left:0;
-top:0;
-
-width:90px;
-height:100vh;
-
-background:white;
-
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-align-items:center;
-
-padding:30px 0;
-
-box-shadow:4px 0 20px rgba(0,0,0,0.05);
-z-index:100;
-}
-
-/* MENU */
-
-.menu{
-display:flex;
-flex-direction:column;
-gap:40px;
-align-items:center;
-}
-
-/* MENU ITEM */
-
-.menu-item{
-width:50px;
-height:50px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:14px;
-
-transition:0.3s;
-}
-
-.menu-item img{
-width:28px;
-}
-
-/* HOVER */
-
-.menu-item:hover{
-background:#f2f0ff;
-transform:scale(1.08);
-}
-
-/* ACTIVE */
-
-.menu-item.active{
-background:#e9e4ff;
-}
-
-/* PROFILE */
-
-.profile img{
-width:34px;
-border-radius:50%;
-cursor:pointer;
-}
-
-/* BODY SPACE */
-
-body{
-margin-left:70px;
-padding:110px;
-}
-/* ================= HEADER ================= */
 
 .page-header h1 {
     font-size: 28px;
@@ -141,422 +69,223 @@ padding:110px;
     margin-bottom: 25px;
 }
 
-
-
-/* ================= FILTER TAB ================= */
-
 .tab-filter {
-
     background: white;
-
     padding: 6px;
-
     border-radius: 30px;
-
     display: inline-flex;
-
     gap: 8px;
-
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-
     margin-bottom: 30px;
-
 }
-
 
 .tab {
-
     padding: 7px 18px;
-
     border-radius: 20px;
-
     font-size: 14px;
-
     cursor: pointer;
-
     border: none;
-
     background: none;
-
     transition: 0.2s;
-
 }
-
 
 .tab:hover {
     background: #f3f1ff;
 }
 
-
 .tab.active {
-
     background: #ece9ff;
-
     font-weight: 500;
-
 }
-
-
-
-/* ================= GRID ================= */
 
 .grid-container {
-
     display: grid;
-
     grid-template-columns: 2fr 1fr;
-
     gap: 40px;
-
 }
-
-
-
-/* ================= SECTION ================= */
 
 .section-title {
     font-weight: 600;
     margin-bottom: 18px;
 }
 
-
-
-/* ================= REMINDER ITEM ================= */
-
 .reminder-item {
-
     display: flex;
-
     align-items: center;
-
     gap: 18px;
-
     background: white;
-
     padding: 16px 20px;
-
     border-radius: 16px;
-
     margin-bottom: 12px;
-
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-
     transition: 0.25s;
-
 }
-
 
 .reminder-item:hover {
-
     transform: translateY(-3px);
-
 }
-
 
 .time {
-
     font-weight: 600;
-
     color: #7a7a7a;
-
     font-size: 13px;
-
     text-align: center;
-
 }
-
 
 .time span {
-
     font-size: 11px;
-
     color: #aaa;
-
 }
-
 
 .reminder-info h4 {
-
     font-size: 15px;
-
     font-weight: 600;
-
     margin: 0;
-
 }
-
 
 .reminder-info p {
-
     font-size: 13px;
-
     color: #777;
-
     margin-top: 3px;
-
 }
-
 
 .btn-done {
-
     margin-left: auto;
-
     background: #dcd6ff;
-
     border: none;
-
     padding: 6px 14px;
-
     border-radius: 20px;
-
     font-size: 13px;
-
     cursor: pointer;
-
     transition: 0.2s;
-
 }
-
 
 .btn-done:hover {
-
     background: #c6beff;
-
 }
-
-
-
-/* ================= FUTURE CARD ================= */
 
 .future-card {
-
     display: flex;
-
     align-items: center;
-
     gap: 14px;
-
     background: white;
-
     padding: 16px;
-
     border-radius: 16px;
-
     margin-bottom: 12px;
-
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-
 }
-
 
 .future-icon {
-
     width: 42px;
-
     height: 42px;
-
     background: #f1efff;
-
     border-radius: 12px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
-
 
 .future-icon img {
-
     width: 32px;
-
 }
-
 
 .future-info b {
-
     font-size: 14px;
-
 }
-
 
 .future-info p {
-
     font-size: 13px;
-
     color: #666;
-
     margin-top: 2px;
-
 }
-
 
 .future-info span {
-
     font-size: 12px;
-
     color: #999;
-
 }
-
-
-
-/* ================= TIPS ================= */
 
 .tips-card {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     background: white;
-
     padding: 20px;
-
     border-radius: 18px;
-
     margin-top: 20px;
-
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-
 }
-
 
 .tips-text h4 {
-
     margin-bottom: 6px;
-
 }
-
 
 .tips-text p {
-
     font-size: 13px;
-
     color: #666;
-
     max-width: 260px;
-
 }
-
 
 .tips-card img {
-
     width: 70px;
-
 }
-
-
-
-/* ================= WEEKLY ================= */
 
 .weekly-card {
-
     background: white;
-
     padding: 20px;
-
     border-radius: 18px;
-
     margin-top: 20px;
-
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-
 }
-
 
 .days {
-
     display: flex;
-
     gap: 6px;
-
     margin-top: 10px;
-
     margin-bottom: 10px;
-
 }
-
 
 .day {
-
     background: #eee;
-
     padding: 5px 10px;
-
     border-radius: 8px;
-
     font-size: 12px;
-
 }
-
 
 .day.active {
-
     background: #ffd7e3;
-
 }
-
 
 .day.blue {
-
     background: #cfe1ff;
-
 }
-
 
 .weekly-bar {
-
     height: 8px;
-
     background: #dcd6ff;
-
     border-radius: 10px;
-
     margin-top: 8px;
-
 }
 
-/* ================= FLOATING BUTTON ================= */
-
 .fab {
-
     position: fixed;
-
     bottom: 30px;
     right: 40px;
-
     width: 60px;
     height: 60px;
-
     border-radius: 50%;
-
     background: linear-gradient(135deg, #8F7CFF, #6B5BFF);
-
     color: white;
-
     font-size: 32px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
-
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
     transition: 0.25s;
-
 }
 
 .fab:hover {
-
     transform: scale(1.1);
-
 }
 
 .popup-overlay {
@@ -586,10 +315,10 @@ padding:110px;
 }
 
 .btn-add{
-background:#8e7dff;
-color:white;
-padding:6px 14px;
-border-radius:10px;
-font-size:13px;
-text-decoration:none;
+    background:#8e7dff;
+    color:white;
+    padding:6px 14px;
+    border-radius:10px;
+    font-size:13px;
+    text-decoration:none;
 }

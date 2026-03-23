@@ -1,47 +1,110 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - SmartMom</title>
 
-<title>SmartMom</title>
-
-<link rel="stylesheet" href="/smartmom/css/profile.css">
-
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 
 <body>
 
-<div class="container">
+<aside class="sidebar">
 
-<div class="auth-card">
+    <div class="menu">
+        <a href="/html/homepage.html" class="menu-item">
+            <img src="/assets/icon home.png">
+            <span>Dashboard</span>
+        </a>
 
-<img src="/smartmom/assets/Logo_smartmom-removebg-preview.png" class="logo">
-<h1>Selamat Datang di SmartMom</h1>
+        <a href="/html/calcullator-input.html" class="menu-item">
+            <img src="/assets/icon kalku.png">
+            <span>Kalkulator</span>
+        </a>
 
-<p>
-Aplikasi pendamping Mom untuk memantau tumbuh kembang
-si kecil dengan lebih mudah.
-</p>
+        <a href="/html/reminder.html" class="menu-item">
+            <img src="/assets/icon reminderr.png">
+            <span>Reminder</span>
+        </a>
 
-<div class="buttons">
+        <a href="/html/timeline.html" class="menu-item">
+            <img src="/assets/icon artikell.png">
+            <span>Timeline</span>
+        </a>
 
-<a href="/smartmom/html/sign in.html" class="btn login">
-Login
-</a>
+        <a href="/html/profile.html" class="menu-item active">
+            <img src="/assets/profile icon.png">
+            <span>Profile</span>
+        </a>
+    </div>
 
-<a href="/smartmom/html/sign up.html" class="btn signup">
-Sign Up
-</a>
+    <div class="bottom">
+        <a class="menu-item logout">
+            <img src="/assets/logout.png">
+            <span>Log Out</span>
+        </a>
+    </div>
+
+</aside>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-left">
+            <img src="/assets/profile icon.png" class="profile-img">
+            <button class="btn-main">Ganti Foto</button>
+        </div>
+
+        <div class="profile-right">
+
+            <h2>Profile Mom 👩‍🍼</h2>
+
+            <div class="profile-fields">
+
+                <div class="profile-field">
+                    <label>Nama</label>
+                    <input type="text">
+                </div>
+
+                <div class="profile-field">
+                    <label>Email</label>
+                    <input type="text">
+                </div>
+
+                <div class="profile-field">
+                    <label>Nama Anak</label>
+                    <input type="text">
+                </div>
+
+                <div class="profile-field">
+                    <label>Usia Anak</label>
+                    <input type="text" disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label>Total Reminder</label>
+                    <input type="text" disabled>
+                </div>
+
+                <div class="profile-field">
+                    <label>Reminder Selesai</label>
+                    <input type="text" disabled>
+                </div>
+
+            </div>
+
+            <button class="btn-main">Simpan</button>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
-
-</div>
-<script src="/smartmom/js/profile.js"></script>
-<button onclick="goLogin()" class="login-btn">Login</button>
-
-<button onclick="goSignup()" class="signup-btn">Sign Up</button>
+<script src="/js/sidebar.js"></script>
 </body>
 </html>

@@ -8,63 +8,49 @@
     <title>Hasil Analisis Pertumbuhan</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/smartmom/css/calcullator-analisis.css">
-
+    <link rel="stylesheet" href="/css/calcullator-analisis.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 </head>
 
 <body class="bg-[#e9e7f2]">
-    <!-- NAVBAR -->
-    <nav class="navbar">
-
-        <div class="logo">
-            <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
-            <h3>SmartMom</h3>
-        </div>
-
-
-    </nav>
 
     <div class="flex">
-
-        <!-- SIDEBAR -->
-<aside class="sidebar">
+        <aside class="sidebar">
 
             <div class="menu">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon menu.png">
+                <a href="/html/homepage.html" class="menu-item">
+                    <img src="/assets/icon home.png">
+                    <span>Dashboard</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon kalkulator.png">
+                <a href="/html/calcullator-input.html" class="menu-item">
+                    <img src="/assets/icon kalku.png">
+                    <span>Kalkulator</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/progres icon.png">
+                <a href="/html/reminder.html" class="menu-item">
+                    <img src="/assets/icon reminderr.png">
+                    <span>Reminder</span>
                 </a>
 
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/checklist icon.png">
+                <a href="/html/timeline.html" class="menu-item">
+                    <img src="/assets/icon artikell.png">
+                    <span>Timeline</span>
                 </a>
-
-                <a href="#" class="menu-item ">
-                    <img src="/smartmom/assets/icon_lonceng-removebg-preview.png">
+                <a href="/html/profile.html" class="menu-item">
+                    <img src="/assets/profile icon.png">
+                    <span>Profile</span>
                 </a>
-
             </div>
 
-            <div class="profile">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon_profile-removebg-preview.png">
+            <div class="bottom">
+                <a class="menu-item logout">
+                    <img src="/assets/logout.png">
+                    <span>Log Out</span>
                 </a>
-
             </div>
 
         </aside>
-
-
-        <!-- CONTENT -->
         <div class="flex-1 px-10">
 
             <h1 class="text-3xl font-bold mb-2">
@@ -72,87 +58,77 @@
             </h1>
 
             <p class="text-gray-600 mb-6">
-                Hore! Pantau tumbuh kembang si kecil disini
+                Berdasarkan data yang dimasukkan, berikut kondisi tumbuh kembang si kecil 👶
             </p>
-
-
-            <!-- SCORE CARD -->
             <div class="result-card flex items-center gap-10">
 
-                <!-- SCORE CIRCLE -->
                 <div class="score-circle">
-                    <span>82</span>
+                    <span id="score">-</span>
                 </div>
-
 
                 <div>
 
-                    <h2 class="text-lg font-semibold">
-                        Maryam - 12 Bulan
+                    <h2 class="text-lg font-semibold" id="namaAnak">
+                        -
                     </h2>
 
                     <div class="status-bar">
-                        Status : <b>Pertumbuhan Normal</b>
+                        Status : <b id="statusUtama">-</b>
                     </div>
 
                     <div class="progress-bar mt-4">
-
                         <div class="progress pink"></div>
                         <div class="progress purple"></div>
                         <div class="progress blue"></div>
-
                     </div>
 
+                    <div class="insight-box mt-4">
+                        <p id="insightText"></p>
+                    </div>
                 </div>
 
             </div>
-
-
-            <!-- MINI CARDS -->
             <div class="grid grid-cols-3 gap-6 mt-8">
 
                 <div class="mini-card">
                     <p class="font-semibold">Berat Badan</p>
-                    <span>Normal</span>
+                    <span id="statusBerat">-</span>
                 </div>
 
                 <div class="mini-card">
                     <p class="font-semibold">Tinggi Badan</p>
-                    <span>Normal</span>
+                    <span id="statusTinggi">-</span>
                 </div>
 
                 <div class="mini-card">
                     <p class="font-semibold">Lingkar Kepala</p>
-                    <span>Normal</span>
+                    <span id="statusKepala">-</span>
                 </div>
 
             </div>
-
-
-            <!-- REKOMENDASI -->
             <div class="recommend-card mt-8">
 
                 <h3 class="font-semibold mb-3">
-                    Rekomendasi untuk Mom
+                    Rekomendasi untuk Mom 💜
                 </h3>
 
-                <ul class="text-sm text-gray-700 space-y-2">
-
-                    <li>Tambahkan protein hewani seperti telur & ikan</li>
-                    <li>Ajak Maryam bermain yang melatih keseimbangan</li>
-                    <li>Jadwal imunisasi berikutnya 15 bulan</li>
-
+                <ul class="text-sm text-gray-700 space-y-2" id="rekomendasiList">
                 </ul>
 
                 <div class="recommend-bar"></div>
+
+                <p class="mt-4 text-xs text-gray-500">
+                    Hasil ini merupakan estimasi awal. Untuk diagnosis lebih lanjut,
+                    disarankan berkonsultasi dengan tenaga kesehatan.
+                </p>
 
             </div>
 
         </div>
     </div>
 
-    <script src="/smartmom/js/calcullator-analisis.js"></script>
-
+    <script src="/js/calcullator-analisis.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 
 </html>

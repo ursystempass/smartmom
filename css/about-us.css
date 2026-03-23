@@ -1,0 +1,159 @@
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f9f8ff;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
+
+.nav-links a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#555;
+}
+
+.nav-links .active{
+    color:#8e7dff;
+}
+
+.auth a{
+    margin-left:15px;
+    text-decoration:none;
+}
+
+.login{
+    background:#2d2dff;
+    color:white;
+    padding:6px 14px;
+    border-radius:10px;
+}
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+    background:linear-gradient(135deg,#efe9ff,#e5ddff);
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.trusted{
+    text-align:center;
+    margin:20px 0;
+    color:#777;
+}
+
+.about{
+    display:flex;
+    padding:80px;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img img{
+    width:100%;
+    border-radius:20px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(90deg,#8e7dff,#c084fc);
+    color:white;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:60px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    width:150px;
+    text-align:center;
+}
+
+.card.active{
+    background:#2d2dff;
+    color:white;
+}
+
+.feature{
+    display:flex;
+    padding:80px;
+    gap:50px;
+    align-items:center;
+}
+
+.feature.reverse{
+    flex-direction:row-reverse;
+}
+
+.feature-img img{
+    width:100%;
+}
+
+.feature-text ul{
+    margin-top:10px;
+}
+
+.team{
+    text-align:center;
+    padding:80px;
+}
+
+.team-grid{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+}
+
+.member{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+}
+
+.member img{
+    width:100px;
+    border-radius:50%;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-around;
+    padding:60px;
+    background:#f0efff;
+}
+
+@media(max-width:768px){
+
+    .about,
+    .feature{
+        flex-direction:column;
+        padding:40px;
+    }
+
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .team-grid{
+        flex-direction:column;
+    }
+
+}

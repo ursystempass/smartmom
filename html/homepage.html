@@ -6,63 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMARTMOM</title>
 
-    <link rel="stylesheet" href="/smartmom/css/homepage.css">
-
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="logo">
-            <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
+            <img src="/assets/Logo_smartmom-removebg-preview.png">
             <h3>SmartMom</h3>
         </div>
-
-                <!-- ================= SIDEBAR ================= -->
-        <aside class="sidebar">
-
-            <div class="menu">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon home.png">
-                </a>
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon kalku.png">
-                </a>
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon reminderr.png">
-                </a>
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/icon artikell.png">
-                </a>
-
-            
-
-            </div>
-
-            <div class="profile">
-
-                <a href="#" class="menu-item">
-                    <img src="/smartmom/assets/profile icon.png">
-                </a>
-
-            </div>
-
-        </aside>
     </nav>
+    <aside class="sidebar">
 
+        <div class="menu">
+            <a href="/html/homepage.html" class="menu-item">
+                <img src="/assets/icon home.png">
+                <span>Dashboard</span>
+            </a>
 
-    <!-- HERO -->
+            <a href="/html/calcullator-input.html" class="menu-item">
+                <img src="/assets/icon kalku.png">
+                <span>Kalkulator</span>
+            </a>
+
+            <a href="/html/reminder.html" class="menu-item">
+                <img src="/assets/icon reminderr.png">
+                <span>Reminder</span>
+            </a>
+
+            <a href="/html/artikel.html" class="menu-item">
+                <img src="/assets/icon artikell.png">
+                <span>Timeline</span>
+            </a>
+            <a href="/html/profile.html" class="menu-item">
+                <img src="/assets/profile icon.png">
+                <span>Profile</span>
+            </a>
+        </div>
+
+        <div class="bottom">
+            <a class="menu-item logout">
+                <img src="/assets/logout.png">
+                <span>Log Out</span>
+            </a>
+        </div>
+
+    </aside>
+    </div>
     <section class="hero">
 
         <div class="hero-image">
-            <img src="/smartmom/assets/gambar 1.jpg">
+            <img src="/assets/gambar 1.jpg">
         </div>
 
         <div class="reminder-panel">
@@ -70,7 +67,7 @@
             <div class="reminder-header">
 
                 <div class="icon">
-                    <img src="/smartmom/assets/icon_lonceng-removebg-preview.png">
+                    <img src="/assets/icon_lonceng-removebg-preview.png">
                 </div>
 
                 <div class="header-text">
@@ -92,9 +89,6 @@
                 </div>
 
             </div>
-
-
-            <!-- REMINDER LIST -->
             <div class="reminder-list">
 
                 <div class="reminder-item">
@@ -121,8 +115,6 @@
         </div>
     </section>
 
-
-    <!-- EMPTY STATE -->
     <section id="emptyState" class="empty-state">
 
         <h2>Belum ada data anak 👶</h2>
@@ -132,27 +124,20 @@
             Isi data anak terlebih dahulu untuk menggunakan fitur SmartMom.
         </p>
 
-        <a href="/smartmom/html/calcullator-input.html">
+        <a href="/html/calcullator-input.html">
             <button class="btn-start">
                 Mulai isi data anak
             </button>
         </a>
 
     </section>
-
-
-
-    <!-- CARDS -->
     <section id="cardsSection" class="cards" style="display:none;">
-
-
-        <!-- KALKULATOR -->
         <div class="card kalkulator">
 
             <div class="kalkulator-top">
 
                 <div class="kalkulator-icon">
-                    <img src="/smartmom/assets/icon kalkulator.png">
+                    <img src="/assets/icon kalkulator.png">
                 </div>
 
                 <div class="kalkulator-text">
@@ -163,7 +148,7 @@
                         Pantau berat dan tinggi badan si kecil sesuai dengan usia.
                     </p>
 
-                    <a href="/smartmom/html/calcullator-input.html">
+                    <a href="/html/calcullator-input.html">
                         <button class="btn-kalkulator">
                             Mulai hitung sekarang
                         </button>
@@ -177,32 +162,28 @@
             <div class="kalkulator-info">
 
                 <div class="info-item">
-                    <img src="/smartmom/assets/icon kalender.png" class="info-icon">
+                    <img src="/assets/icon kalender.png" class="info-icon">
                     <span>Status bulan ini : <b id="statusBulan">-</b></span>
                 </div>
 
                 <div class="info-item">
-                    <img src="/smartmom/assets/icon usia anak .png" class="info-icon">
+                    <img src="/assets/icon usia anak .png" class="info-icon">
                     <span>Usia anak : <b id="usiaAnak">-</b></span>
                 </div>
 
                 <div class="info-item">
-                    <img src="/smartmom/assets/icon update terakhir.png" class="info-icon">
+                    <img src="/assets/icon update terakhir.png" class="info-icon">
                     <span>Update terakhir : <b id="updateTerakhir">-</b></span>
                 </div>
 
             </div>
 
         </div>
-
-
-
-        <!-- MILESTONE -->
         <div class="card milestone">
 
             <div class="milestone-header">
 
-                <img src="/smartmom/assets/icon miletones.png" class="milestone-icon">
+                <img src="/assets/icon miletones.png" class="milestone-icon">
 
                 <h3>Checklist Milestone</h3>
 
@@ -238,14 +219,11 @@
 
         </div>
 
-
-
-        <!-- ARTIKEL -->
         <div class="card artikel">
 
             <div class="artikel-header">
 
-                <img src="/smartmom/assets/icon artikel.png" class="artikel-icon">
+                <img src="/assets/icon artikel.png" class="artikel-icon">
 
                 <h3>Rekomendasi untuk Mom</h3>
 
@@ -254,18 +232,18 @@
             <div class="artikel-list">
 
                 <div class="artikel-item">
-                    <img src="/smartmom/assets/gambar2.png" class="artikel-img">
+                    <img src="/assets/gambar2.png" class="artikel-img">
                     <p>5 cara menstimulasi motorik halus bayi</p>
                 </div>
 
                 <div class="artikel-item">
-                    <img src="/smartmom/assets/gambar3.png" class="artikel-img">
+                    <img src="/assets/gambar3.png" class="artikel-img">
                     <p>Panduan MPASI untuk pemula</p>
                 </div>
 
             </div>
 
-            <a href="/smartmom/html/artikel.html">
+            <a href="/html/artikel.html">
                 <button class="lihat-artikel">
                     Lihat semua artikel →
                 </button>
@@ -273,10 +251,6 @@
         </div>
 
     </section>
-
-
-
-    <!-- POPUP LOGOUT -->
     <div id="logoutPopup" class="popup-overlay">
 
         <div class="popup-card">
@@ -301,7 +275,8 @@
 
     </div>
 
-    <script src="/smartmom../js/homepage.js"></script>
+    <script src="/js/homepage.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 
 </html>
