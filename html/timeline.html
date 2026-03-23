@@ -4,143 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Timeline Perkembangan Anak</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/smartmom/css/timeline.css">
+    <title>Timeline SmartMom</title>
+    <link rel="stylesheet" href="/css/timeline.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 
 </head>
 
-<body class="bg-[#e9e7f2]">
+<body>
+    <aside class="sidebar">
 
-    <!-- NAVBAR -->
-    <header class="flex items-center gap-3 px-10 py-6">
+        <div class="menu">
+            <a href="/html/homepage.html" class="menu-item">
+                <img src="/assets/icon home.png">
+                <span>Dashboard</span>
+            </a>
 
-        <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png" class="w-8">
-        <h1 class="font-bold tracking-wide">SMARTMOM</h1>
+            <a href="/html/calcullator-input.html" class="menu-item">
+                <img src="/assets/icon kalku.png">
+                <span>Kalkulator</span>
+            </a>
 
-    </header>
+            <a href="/html/reminder.html" class="menu-item">
+                <img src="/assets/icon reminderr.png">
+                <span>Reminder</span>
+            </a>
 
-
-    <div class="flex">
-
-        <!-- SIDEBAR -->
-        <div class="flex flex-col gap-6 items-center pl-6 pt-20">
-
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
-            <div class="side-icon"></div>
-            <div class="side-icon active"></div>
-            <div class="side-icon"></div>
-
+            <a href="/html/timeline.html" class="menu-item">
+                <img src="/assets/icon artikell.png">
+                <span>Timeline</span>
+            </a>
+            <a href="/html/profile.html" class="menu-item">
+                <img src="/assets/profile icon.png">
+                <span>Profile</span>
+            </a>
         </div>
 
+        <div class="bottom">
+            <a class="menu-item logout">
+                <img src="/assets/logout.png">
+                <span>Log Out</span>
+            </a>
+        </div>
 
-        <!-- CONTENT -->
-        <div class="flex-1 px-10">
+    </aside>
+    <div class="content">
 
-            <h1 class="text-3xl font-bold mb-2">
-                Timeline Perkembangan Anak
-            </h1>
-
-            <p class="text-gray-600 mb-6">
-                Lihat milestone tumbuh kembang si kecil di setiap usianya
+        <h1 class="title">Pantau Perkembangan Si Kecil 👶</h1>
+        <p class="subtitle">
+            Milestone membantu Moms memahami perkembangan anak sesuai usia
+        </p>
+        <p id="statusMilestone" class="progress-text"></p>
+        <div class="tabs">
+            <button class="age-tab" data-age="0-3">0-3</button>
+            <button class="age-tab" data-age="4-6">4-6</button>
+            <button class="age-tab" data-age="7-9">7-9</button>
+            <button class="age-tab" data-age="10-12">10-12</button>
+        </div>
+        <div id="timelineContainer" class="timeline-grid"></div>
+        <div class="progress-bar-container">
+            <div id="progressBar"></div>
+        </div>
+        <div class="info-box">
+            <h3>Kenapa milestone penting?</h3>
+            <p>
+                Milestone membantu Moms mengetahui apakah perkembangan anak sesuai usia.
+                Jika belum tercapai, dapat dilakukan stimulasi atau konsultasi.
             </p>
-
-
-            <!-- TAB USIA -->
-            <div class="flex gap-4 mb-8">
-
-                <button class="age-tab" data-age="0-3">0 - 3 bulan</button>
-                <button class="age-tab active" data-age="4-6">4 - 6 Bulan</button>
-                <button class="age-tab" data-age="7-9">7 - 9 Bulan</button>
-                <button class="age-tab" data-age="10-12">10 - 12 Bulan</button>
-
-                <div class="ml-auto age-tab purple">
-                    Usia 4 Bulan
-                </div>
-
-            </div>
-
-
-            <!-- MILESTONE CARDS -->
-            <div id="timelineContainer" class="grid grid-cols-4 gap-6">
-                <!-- CARD -->
-                <div class="timeline-card">
-
-                    <h3>Mengangkat Kepala</h3>
-
-                    <img src="/smartmom/assets/baby.png">
-
-                    <p>
-                        Si Kecil mulai bisa mengangkat kepalanya saat tengkurap
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-card">
-
-                    <h3>Membalikkan Badan</h3>
-
-                    <img src="/smartmom/assets/baby_1.png">
-
-                    <p>
-                        Si Kecil mulai bisa membalikkan badan dari tengkurap ke telentang
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-card">
-
-                    <h3>Meraih Benda</h3>
-
-                    <img src="/smartmom/assets/baby_2.png">
-
-                    <p>
-                        Si Kecil mulai bisa meraih dan menggenggam mainan di dekatnya
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-card">
-
-                    <h3>Mengeluarkan Ocehan</h3>
-
-                    <img src="/smartmom/assets/baby_3.png">
-
-                    <p>
-                        Si Kecil mulai sering mengeluarkan suara “ooohh” dan “aaahh”
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- NEXT STEP -->
-            <div class="next-card mt-10">
-
-                <h3 class="text-center font-semibold mb-4">
-                    Siap mendampingi anak di tahap selanjutnya?
-                </h3>
-
-                <div class="flex justify-center">
-                    <button class="btn-main">
-                        Lanjut ke Usia 4-6 Bulan
-                    </button>
-                </div>
-
-            </div>
-
         </div>
+        <p class="warning">
+            Jika anak belum mencapai milestone tertentu,
+            disarankan memberikan stimulasi tambahan atau konsultasi.
+        </p>
+        <div class="recommend">
+            <h3>Rekomendasi untuk Moms</h3>
+            <ul>
+                <li>Ajak bayi bermain dan berinteraksi setiap hari</li>
+                <li>Berikan stimulasi suara dan sentuhan</li>
+                <li>Perhatikan respon anak terhadap lingkungan</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <a href="/html/calcullator-input.html">
+                <button class="btn-main">Update Data Anak</button>
+            </a>
+        </div>
+
     </div>
 
-    <script src="/smartmom/js/timeline.js"></script>
-
+    <script src="/js/timeline.js"></script>
+    <script src="/js/sidebar.js"></script>
 </body>
 
 </html>

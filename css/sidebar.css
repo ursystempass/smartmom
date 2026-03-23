@@ -1,0 +1,156 @@
+
+.sidebar{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: clamp(160px, 18vw, 200px);
+    height: calc(100vh - 40px);
+
+    background: white;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    z-index: 100;
+        width: var(--sidebar-width);
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 clamp(12px, 2vw, 20px);
+
+    font-size: clamp(12px, 1.2vw, 14px);
+    font-weight: 600;
+}
+
+.logo img{
+    width: clamp(28px, 3vw, 36px);
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 12px);
+
+    padding: clamp(8px, 1.2vw, 10px) clamp(12px, 2vw, 18px);
+    margin: 0 10px;
+
+    border-radius: 12px;
+
+    font-size: clamp(11px, 1.2vw, 13px);
+    color: #555;
+
+    transition: 0.2s;
+}
+
+.menu-item img{
+    width: clamp(18px, 2vw, 20px);
+}
+
+.menu-item:hover{
+    background: #f3f0ff;
+}
+
+.menu-item.active{
+    background: linear-gradient(135deg,#7b61ff,#9f8cff);
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(123,97,255,0.25);
+}
+
+.logout{
+    color: #888;
+}
+
+.logout img{
+    width: clamp(16px, 1.8vw, 18px);
+}
+
+.logout:hover{
+    background: #ffecec;
+}
+
+.logout-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 14px;
+    border-radius:12px;
+
+    font-size:13px;
+    color:#8a8a8a;
+
+    text-decoration:none;
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.logout-btn img{
+    width:18px;
+    opacity:0.7;
+}
+
+.logout-btn:hover{
+    background:#f5f3ff;
+    color:#6f5cff;
+}
+
+.logout-btn:hover img{
+    opacity:1;
+}
+
+@media (max-width:1024px){
+
+    .sidebar{
+        width: 90px;
+    }
+
+    .logo span{
+        display: none;
+    }
+
+    .menu-item span{
+        display: none;
+    }
+
+    .menu-item{
+        justify-content: center;
+        padding: 12px;
+    }
+}
+
+@media (max-width:600px){
+
+    .sidebar{
+        width: 70px;
+        left: 10px;
+        top: 10px;
+        height: calc(100vh - 20px);
+    }
+
+    .menu-item{
+        padding: 10px;
+    }
+
+    .menu-item img{
+        width: 20px;
+    }
+}

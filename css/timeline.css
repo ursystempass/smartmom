@@ -1,53 +1,146 @@
-/* AGE TAB */
+.content {
+    padding: 40px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
 
 .age-tab {
-    background: #e8e3f4;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
-    font-size: 14px;
+    background: #eee;
+    border: none;
+    cursor: pointer;
 }
 
 .age-tab.active {
-    background: #e6b6d6;
+    background: #8e7dff;
+    color: white;
 }
 
-.age-tab.purple {
-    background: #d7c9ff;
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
-
-
-/* TIMELINE CARD */
 
 .timeline-card {
     background: white;
     padding: 18px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
 }
 
-.timeline-card h3 {
-    font-weight: 600;
-    margin-bottom: 10px;
+.timeline-card:hover {
+    transform: translateY(-5px);
 }
 
 .timeline-card img {
-    width: 120px;
-    margin: auto;
+    width: 90px;
+    margin: 10px auto;
 }
 
-.timeline-card p {
+.check-label {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
     font-size: 13px;
-    margin-top: 10px;
-    color: #555;
 }
 
+.progress-text {
+    font-weight: 500;
+}
 
-/* NEXT CARD */
+.progress-bar-container {
+    width: 220px;
+    height: 10px;
+    background: #eee;
+    border-radius: 10px;
+    margin: 20px 0;
+}
 
-.next-card {
-    background: white;
-    padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+#progressBar {
+    height: 10px;
+    width: 0%;
+    background: #8e7dff;
+    border-radius: 10px;
+}
+
+.info-box {
+    background: #f3f0ff;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.warning {
+    color: #ff6b6b;
+    margin-top: 15px;
+}
+
+.recommend {
+    margin-top: 20px;
+}
+
+.btn-main {
+    background: linear-gradient(90deg, #8e7dff, #c084fc);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+body {
+    margin-left: 160px;
+    padding: 10px 30px 30px 30px;
+    background: linear-gradient(135deg, #ebe7ff, #f6f4ff);
+
+}
+
+@media (max-width:1024px) {
+    body {
+        margin-left: 120px;
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        margin-left: 100px;
+    }
+
+    .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+    body {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        margin-left: 70px;
+    }
+
+    .timeline-grid {
+        grid-template-columns: 1fr;
+    }
 }

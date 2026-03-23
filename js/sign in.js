@@ -6,38 +6,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         e.preventDefault();
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
         const savedUser = JSON.parse(localStorage.getItem("smartmom_user"));
 
-        if (savedUser && email === savedUser.email && password === savedUser.password) {
+        // CEK USER ADA
+        if (!savedUser) {
+            alert("Akun belum terdaftar!");
+            return;
+        }
 
-            // simpan status login
+        // LOGIN SUCCESS
+        if (email === savedUser.email && password === savedUser.password) {
+
             localStorage.setItem("login_status", "true");
 
-            document
-                .getElementById("popupLogin")
-                .classList
-                .add("active");
+            document.getElementById("popupText").innerText = "Login berhasil, mengarahkan...";
+            document.getElementById("popupLogin").classList.add("active");
+
+            // AUTO REDIRECT
+            setTimeout(() => {
+                window.location.href = "/html/homepage.html";
+            }, 1500);
 
         } else {
 
             document.getElementById("popupIcon").classList.add("error");
             document.getElementById("popupTitle").innerText = "Login gagal";
-            document.getElementById("popupText").innerText = "Email atau password salah";
+            document.getElementById("popupText").innerText = "Periksa kembali email dan password";
 
-            document
-                .getElementById("popupLogin")
-                .classList
-                .add("active");
+            document.getElementById("popupLogin").classList.add("active");
 
         }
 
     });
 
 });
-
-function goToHome() {
-    window.location.href = "homepage.html";
-}

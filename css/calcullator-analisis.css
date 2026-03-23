@@ -1,4 +1,6 @@
-/* NAVBAR */
+:root{
+    --sidebar-width: clamp(160px, 18vw, 200px);
+}
 
 .navbar {
     display: flex;
@@ -9,13 +11,10 @@
 
 .logo img {
     width: 40px;
-    /* ukuran gambar lonceng */
     height: 40px;
     object-fit: contain;
     filter: drop-shadow(0 3px 5px rgba(140, 110, 255, 0.35));
 }
-
-
 
 .nav-links {
     display: flex;
@@ -46,86 +45,13 @@
     box-shadow: inset 3px 3px 6px rgba(160, 140, 255, 0.35),
         inset -3px -3px 6px rgba(255, 255, 255, 0.9);
 }
-/* SIDEBAR */
-
-.sidebar{
-position:fixed;
-left:0;
-top:0;
-
-width:90px;
-height:100vh;
-
-background:white;
-
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-align-items:center;
-
-padding:30px 0;
-
-box-shadow:4px 0 20px rgba(0,0,0,0.05);
-z-index:100;
-}
-
-/* MENU */
-
-.menu{
-display:flex;
-flex-direction:column;
-gap:40px;
-align-items:center;
-}
-
-/* MENU ITEM */
-
-.menu-item{
-width:50px;
-height:50px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:14px;
-
-transition:0.3s;
-}
-
-.menu-item img{
-width:28px;
-}
-
-/* HOVER */
-
-.menu-item:hover{
-background:#f2f0ff;
-transform:scale(1.08);
-}
-
-/* ACTIVE */
-
-.menu-item.active{
-background:#e9e4ff;
-}
-
-/* PROFILE */
-
-.profile img{
-width:34px;
-border-radius:50%;
-cursor:pointer;
-}
-
-/* BODY SPACE */
 
 body{
-margin-left:60px;
-padding:120px;
-}
+margin-left:160px;
+    padding: 20px 40px; 
+        background: linear-gradient(135deg, #ebe7ff, #f6f4ff);
 
-/* RESULT CARD */
+}
 
 .result-card {
     background: white;
@@ -134,8 +60,6 @@ padding:120px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-
-/* SCORE CIRCLE */
 
 .score-circle {
     width: 140px;
@@ -173,8 +97,6 @@ padding:120px;
     color: #333;
 }
 
-/* STATUS BAR */
-
 .status-bar {
     background: #ffdcdc;
     padding: 6px 12px;
@@ -182,9 +104,6 @@ padding:120px;
     font-size: 13px;
     margin-top: 6px;
 }
-
-
-/* PROGRESS BAR */
 
 .progress-bar {
     display: flex;
@@ -209,9 +128,6 @@ padding:120px;
     background: #8bb4ff;
 }
 
-
-/* MINI CARDS */
-
 .mini-card {
     background: white;
     padding: 20px;
@@ -224,9 +140,6 @@ padding:120px;
     font-size: 14px;
     color: #555;
 }
-
-
-/* RECOMMEND */
 
 .recommend-card {
     background: white;
@@ -241,4 +154,43 @@ padding:120px;
     background: #8fa2ff;
     border-radius: 20px;
     margin-top: 10px;
+}
+
+.insight-box {
+    background: #f3f0ff;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #4a3a6e;
+}
+
+.card,
+.problem-card,
+.impact-card,
+.timeline-card {
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.problem-card:hover,
+.impact-card:hover,
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(120,100,255,0.2);
+}
+
+button,
+.btn-main,
+.btn-kalkulator {
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.btn-main:hover,
+.btn-kalkulator:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
 }
