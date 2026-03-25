@@ -1,12 +1,13 @@
-const user = localStorage.getItem("user")
+const user = localStorage.getItem("smartmom_user")
 
-if(!user){
-window.location.href = "auth.html"
-}
-function goLogin(){
-window.location.href = "sign in.html"
+if (!user) {
+    window.location.href = "sign in.html"
 }
 
-function goSignup(){
-window.location.href = "sign up.html"
+function goLogin() {
+    window.location.href = "sign in.html"
+}
+
+function goSignup() {
+    window.location.href = "sign up.html"
 }
