@@ -7,8 +7,10 @@
     <title>Reminder SmartMom</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/reminder.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+
+    <link rel="stylesheet" href="/smartmom/css/reminder.css">
+    <link rel="stylesheet" href="/smartmom/css/sidebar.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -16,155 +18,149 @@
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
     <div class="flex">
-    <aside class="sidebar">
-        
-        <div class="menu">
+        <aside class="sidebar">
+            
+            <div class="menu">
 
-            <nav class="navbar">
-                 <div class="logo">
-                    <img src="/assets/Logo_smartmom-removebg-preview.png">
-                    <h3>SmartMom</h3>
+                <nav class="navbar">
+                    <div class="logo">
+                        <img src="/smartmom/assets/Logo_smartmom-removebg-preview.png">
+                        <h3>SmartMom</h3>
                     </div>
-            </nav>
+                </nav>
 
-            <a href="/html/homepage.html" class="menu-item">
-                <img src="/assets/icon home.png">
-                <span>Dashboard</span>
-            </a>
+                <a href="/smartmom/html/homepage.html" class="menu-item">
+                    <img src="/smartmom/assets/icon home.png">
+                    <span>Dashboard</span>
+                </a>
 
-            <a href="/html/calcullator-input.html" class="menu-item">
-                <img src="/assets/icon kalku.png">
-                <span>Kalkulator</span>
-            </a>
+                <a href="/smartmom/html/calcullator-input.html" class="menu-item">
+                    <img src="/smartmom/assets/icon kalku.png">
+                    <span>Kalkulator</span>
+                </a>
 
-            <a href="/html/reminder.html" class="menu-item active">
-                <img src="/assets/icon reminderr.png">
-                <span>Reminder</span>
-            </a>
+                <a href="/smartmom/html/reminder.html" class="menu-item active">
+                    <img src="/smartmom/assets/icon reminderr.png">
+                    <span>Reminder</span>
+                </a>
 
-            <a href="/html/timeline.html" class="menu-item">
-                <img src="/assets/icon artikell.png">
-                <span>Timeline</span>
-            </a>
+                <a href="/smartmom/html/timeline.html" class="menu-item">
+                    <img src="/smartmom/assets/icon artikell.png">
+                    <span>Timeline</span>
+                </a>
 
-            <a href="/html/profile.html" class="menu-item">
-                <img src="/assets/profile icon.png">
-                <span>Profile</span>
-            </a>
-        </div>
+                <a href="/smartmom/html/profile.html" class="menu-item">
+                    <img src="/smartmom/assets/profile icon.png">
+                    <span>Profile</span>
+                </a>
+            </div>
 
-        <div class="bottom">
-            <a class="menu-item logout">
-                <img src="/assets/logout.png">
-                <span>Log Out</span>
-            </a>
-        </div>
-    </aside>
+            <div class="bottom">
+                <a class="menu-item logout">
+                    <img src="/smartmom/assets/logout.png">
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
     
 
-    <!-- CONTENT -->
-    <div class="main-content">
-        <main class="content">
+        <div class="main-content">
+            <main class="content">
 
-            <div class="page-header">
-                <h1>Reminder SmartMom</h1>
-                <p>Jadwal penting si kecil dan pengingat untuk Mom 💜</p>
-            </div>
+                <div class="page-header">
+                    <h1>Reminder SmartMom</h1>
+                    <p>Jadwal penting si kecil dan pengingat untuk Mom 💜</p>
+                </div>
 
-            <div class="tab-filter">
-                <button class="tab active" data-filter="all">Semua</button>
-                <button class="tab" data-filter="imunisasi">Imunisasi</button>
-                <button class="tab" data-filter="mpasi">MPASI</button>
-                <button class="tab" data-filter="kontrol">Cek Kontrol</button>
-            </div>
+                <div class="tab-filter">
+                    <button class="tab active" data-filter="all">Semua</button>
+                    <button class="tab" data-filter="imunisasi">Imunisasi</button>
+                    <button class="tab" data-filter="mpasi">MPASI</button>
+                    <button class="tab" data-filter="kontrol">Cek Kontrol</button>
+                </div>
 
-            <div class="grid-container">
+                <div class="grid-container">
 
-                <!-- LEFT -->
-                <section class="today-reminder">
+                    <section class="today-reminder">
 
-                    <h3 class="section-title">Pengingat Hari Ini</h3>
+                        <h3 class="section-title">Pengingat Hari Ini</h3>
 
-                    <!-- CARD 1 -->
-                    <div class="reminder-item" data-category="imunisasi">
-                        <div class="time">09.00 <span>AM</span></div>
+                        <div class="reminder-item" data-category="imunisasi">
+                            <div class="time">09.00 <span>AM</span></div>
 
-                        <div class="reminder-info">
-                            <h4>Imunisasi DPT ke-3</h4>
-                            <p>Puskesmas</p>
+                            <div class="reminder-info">
+                                <h4>Imunisasi DPT ke-3</h4>
+                                <p>Puskesmas</p>
+                            </div>
+
+                            <button class="btn-done">Selesai</button>
                         </div>
 
-                        <button class="btn-done">Selesai</button>
-                    </div>
+                        <div class="reminder-item" data-category="mpasi">
+                            <div class="time">12.00 <span>PM</span></div>
 
-                    <!-- CARD 2 -->
-                    <div class="reminder-item" data-category="mpasi">
-                        <div class="time">12.00 <span>PM</span></div>
+                            <div class="reminder-info">
+                                <h4>MPASI Siang</h4>
+                                <p>Bubur ayam + sayur</p>
+                            </div>
 
-                        <div class="reminder-info">
-                            <h4>MPASI Siang</h4>
-                            <p>Bubur ayam + sayur</p>
+                            <button class="btn-done">Selesai</button>
                         </div>
 
-                        <button class="btn-done">Selesai</button>
-                    </div>
-
-                    <!-- TIPS -->
-                    <div class="tips-card">
-                        <div>
-                            <h4>Tips untuk Mom</h4>
-                            <p>
-                                Pantau tumbuh kembang anak setiap bulan dan catat berat serta tinggi badannya.
-                            </p>
-                        </div>
-                        <img src="/assets/icon tips.png">
-                    </div>
-
-                </section>
-
-                <!-- RIGHT -->
-                <section class="future-reminder">
-
-                    <div class="flex justify-between items-center">
-                        <h3 class="section-title">Pengingat Mendatang</h3>
-
-                        <a href="/html/reminder-input.html" class="btn-add">
-                            + Tambah
-                        </a>
-                    </div>
-
-                    <div id="futureList"></div>
-
-                    <!-- WEEKLY -->
-                    <div class="weekly-card">
-                        <h4>Aktivitas Mingguan</h4>
-
-                        <div class="days">
-                            <span class="day active">Sen</span>
-                            <span class="day">Sel</span>
-                            <span class="day blue">Rab</span>
-                            <span class="day">Kam</span>
-                            <span class="day">Jum</span>
-                            <span class="day">Sab</span>
-                            <span class="day">Min</span>
+                        <div class="tips-card">
+                            <div>
+                                <h4>Tips untuk Mom</h4>
+                                <p>
+                                    Pantau tumbuh kembang anak setiap bulan dan catat berat serta tinggi badannya.
+                                </p>
+                            </div>
+                            <img src="/smartmom/assets/icon tips.png">
                         </div>
 
-                        <div class="weekly-bar"></div>
-                    </div>
+                    </section>
 
-                </section>
+                    <section class="future-reminder">
 
-            </div>
+                        <div class="flex justify-between items-center">
+                            <h3 class="section-title">Pengingat Mendatang</h3>
 
-        </main>
+                            <a href="/smartmom/html/reminder-input.html" class="btn-add">
+                                + Tambah
+                            </a>
+                        </div>
+
+                        <div id="futureList"></div>
+
+                        <div class="weekly-card">
+                            <h4>Aktivitas Mingguan</h4>
+
+                            <div class="days">
+                                <span class="day active">Sen</span>
+                                <span class="day">Sel</span>
+                                <span class="day blue">Rab</span>
+                                <span class="day">Kam</span>
+                                <span class="day">Jum</span>
+                                <span class="day">Sab</span>
+                                <span class="day">Min</span>
+                            </div>
+
+                            <div class="weekly-bar"></div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </main>
+        </div>
+
     </div>
 
 </div>
 
-<script src="/js/reminder.js"></script>
-<script src="/js/sidebar.js"></script>
+<script src="/smartmom/js/reminder.js"></script>
+<script src="/smartmom/js/sidebar.js"></script>
 
 </body>
 </html>
