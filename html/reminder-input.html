@@ -7,61 +7,69 @@
     <title>Tambah Reminder</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/calcullator-input.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
+
+    <link rel="stylesheet" href="../css/calcullator-input.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-gray-200">
-    <aside class="sidebar">
-        <div class="menu">
-            <nav class="navbar"></nav>
-            <div class="logo">
-            <img src="/assets/Logo_smartmom-removebg-preview.png">
-            <h3>SmartMom</h3>
-        </div>
-        </nav>
-            <a href="/html/homepage.html" class="menu-item">
-                <img src="/assets/icon home.png">
-                <span>Dashboard</span>
-            </a>
 
-            <a href="/html/calcullator-input.html" class="menu-item">
-                <img src="/assets/icon kalku.png">
-                <span>Kalkulator</span>
-            </a>
-
-            <a href="/html/reminder.html" class="menu-item">
-                <img src="/assets/icon reminderr.png">
-                <span>Reminder</span>
-            </a>
-
-            <a href="/html/timeline.html" class="menu-item">
-                <img src="/assets/icon artikell.png">
-                <span>Timeline</span>
-            </a>
-            <a href="/html/profile.html" class="menu-item">
-                <img src="/assets/profile icon.png">
-                <span>Profile</span>
-            </a>
-        </div>
-
-        <div class="bottom">
-            <a class="menu-item logout">
-                <img src="/assets/logout.png">
-                <span>Log Out</span>
-            </a>
-        </div>
-
-    </aside>
     <div class="flex">
+
+        <aside class="sidebar">
+
+            <div class="menu">
+
+                <nav class="navbar">
+                    <div class="logo">
+                        <img src="../assets/Logo_smartmom-removebg-preview.png">
+                        <h3>SmartMom</h3>
+                    </div>
+                </nav>
+
+                <a href="../html/homepage.html" class="menu-item">
+                    <img src="../assets/icon home.png">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../html/calcullator-input.html" class="menu-item">
+                    <img src="../assets/icon kalku.png">
+                    <span>Kalkulator</span>
+                </a>
+
+                <a href="../html/reminder.html" class="menu-item">
+                    <img src="../assets/icon reminderr.png">
+                    <span>Reminder</span>
+                </a>
+
+                <a href="../html/timeline.html" class="menu-item">
+                    <img src="../assets/icon artikell.png">
+                    <span>Timeline</span>
+                </a>
+
+                <a href="../html/profile.html" class="menu-item">
+                    <img src="../assets/profile icon.png">
+                    <span>Profile</span>
+                </a>
+
+            </div>
+
+            <div class="bottom">
+                <a class="menu-item logout">
+                    <img src="../assets/logout.png">
+                    <span>Log Out</span>
+                </a>
+            </div>
+
+        </aside>
 
         <div class="flex-1 px-10">
 
             <h2 class="text-xl font-semibold mb-6">
                 Tambah Pengingat
             </h2>
-
 
             <div class="form-card">
 
@@ -84,7 +92,6 @@
 
             </div>
 
-
             <div class="flex justify-center mt-10">
 
                 <button id="simpanReminder" class="btn-main">
@@ -97,7 +104,7 @@
 
     </div>
 
-    <script src="/js/reminder-input.js"></script>
+    <script src="../js/reminder-input.js"></script>
 
 </body>
 
