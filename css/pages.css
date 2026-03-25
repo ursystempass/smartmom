@@ -1,0 +1,113 @@
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#f3efff,#f8f6ff);
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-weight:600;
+    color:#7a5cff;
+}
+
+.nav-links a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#555;
+}
+
+.nav-links .active{
+    color:#8e7dff;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:120px 20px;
+    background:linear-gradient(135deg,#e9e2ff,#dcd2ff);
+}
+
+.hero.small{
+    padding:80px 20px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    padding:80px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* BLOG */
+.blog{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:80px;
+}
+
+.blog-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    width:250px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    text-align:center;
+}
+
+.blog-card img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* CONTACT */
+.contact{
+    display:flex;
+    gap:50px;
+    padding:80px;
+    justify-content:center;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    width:300px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+button{
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(90deg,#8e7dff,#c084fc);
+    color:white;
+}
+
+.contact-info{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+}

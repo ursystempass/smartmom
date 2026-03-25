@@ -13,16 +13,16 @@
 
 <body>
 
-    <!-- SIDEBAR (TETAP) -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="menu">
             <nav class="navbar">
-            <div class="logo">
-                <img src="/assets/Logo_smartmom-removebg-preview.png">
-                <h3>SmartMom</h3>
-            </div>
-        </nav>
-        <ul></ul>
+                <div class="logo">
+                    <img src="/assets/Logo_smartmom-removebg-preview.png">
+                    <h3>SmartMom</h3>
+                </div>
+            </nav>
+
             <a href="/html/homepage.html" class="menu-item active">
                 <img src="/assets/icon home.png">
                 <span>Dashboard</span>
@@ -58,160 +58,146 @@
     </aside>
 
     <!-- MAIN -->
-    <main class="main-content">
+     <main class="main-content">
 
-        <!-- NAVBAR -->
-        
+    <div class="dashboard">
 
         <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-image">
-                <img src="/assets/mamadanibu.png">
+        <div class="hero-image">
+            <img src="/assets/mamadanibu.png">
+            <div class="hero-text">
+                <h1>Deteksi Tumbuh Kembang Anak Lebih Dini & Lebih Akurat</h1>
+                <p>
+                    SmartMom membantu orang tua memantau pertumbuhan anak,
+                    memberikan analisis sederhana, serta pengingat penting
+                    agar perkembangan si kecil tetap optimal setiap hari.
+                </p>
             </div>
-
-    
-
-   <div class="reminder-panel">
-
-    <div class="reminder-header">
-        <img src="/assets/icon_lonceng-removebg-preview.png" class="bell-icon">
-        <div>
-            <h3>Reminder!</h3>
-            <p>Pantau hal penting untuk perkembangan si kecil</p>
         </div>
-    </div>
 
-    <div class="progress-section">
-    <div class="progress-title">
-        <span>Progres Reminder</span>
-        <span id="progressText">0 dari 0 selesai</span>
-    </div>
-
-    <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-    </div>
-</div>
-
-<div class="timeline" id="timelineList"></div>
-
-</div>
-
-</div>
-
+        <!-- REMINDER -->
+        <div class="reminder-panel">
+            <div class="reminder-header">
+                <img src="/assets/icon_lonceng-removebg-preview.png" class="bell-icon">
+                <div>
+                    <h3>Reminder!</h3>
+                    <p>Pantau hal penting untuk perkembangan si kecil</p>
+                </div>
             </div>
 
-        </section>
+            <div class="progress-section">
+                <div class="progress-title">
+                    <span>Progres Reminder</span>
+                    <span id="progressText">0 dari 0 selesai</span>
+                </div>
 
-        <!-- CARDS -->
-        <section class="cards">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
 
-            <!-- KALKULATOR -->
-           <div class="card kalkulator">
+            <div class="timeline" id="timelineList"></div>
+        </div>
 
-    <div class="kalkulator-top">
-        <img src="/assets/icon kalkulator.png">
+        <!-- ARTIKEL -->
+        <div class="card artikel">
+            <h3>Rekomendasi untuk Mom</h3>
 
-        <div class="kalkulator-text">
-            <h2>Kalkulator Tumbuh Kembang</h2>
-            <p>Pantau pertumbuhan si kecil sesuai usia</p>
+            <div class="artikel-list">
+                <a href="/html/artikel.html" class="artikel-item">
+                    <img src="/assets/gambar2.png">
+                    <div class="artikel-text">
+                        <p class="judul">5 cara menstimulasi motorik halus bayi</p>
+                        <span class="kategori">Perkembangan Bayi</span>
+                    </div>
+                </a>
 
-            <a href="/html/calcullator-input.html">
-                <button class="btn-main">Mulai hitung</button>
+                <a href="/html/artikel.html" class="artikel-item">
+                    <img src="/assets/gambar3.png">
+                    <div class="artikel-text">
+                        <p class="judul">Panduan MPASI untuk pemula</p>
+                        <span class="kategori">Nutrisi</span>
+                    </div>
+                </a>
+            </div>
+
+            <a href="/html/artikel.html" class="lihat-artikel">
+                Lihat semua artikel →
             </a>
         </div>
-    </div>
 
-    <div class="kalkulator-info">
-        <div class="info-item">
-            <span>📅 Status</span>
-            <b id="statusBulan">-</b>
-        </div>
+        <!-- KALKULATOR -->
+        <div class="card kalkulator">
+            <div class="kalkulator-top">
+                <img src="/assets/icon kalkulator.png">
 
-        <div class="info-item">
-            <span>👶 Usia</span>
-            <b id="usiaAnak">-</b>
-        </div>
+                <div class="kalkulator-text">
+                    <h2>Kalkulator Tumbuh Kembang</h2>
+                    <p>Pantau pertumbuhan si kecil sesuai usia</p>
 
-        <div class="info-item">
-            <span>🔄 Update</span>
-            <b id="updateTerakhir">-</b>
-        </div>
-    </div>
-
-</div>
-
-            <!-- MILESTONE -->
-    <div class="card milestone">
-
-    <h3>Checklist Milestone</h3>
-
-    <div class="milestone-list">
-        <label class="milestone-item">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            <span>Sudah duduk tanpa bantuan</span>
-        </label>
-
-        <label class="milestone-item">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            <span>Sudah merangkak</span>
-        </label>
-
-        <label class="milestone-item">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            <span>Sudah merespon suara</span>
-        </label>
-
-        <label class="milestone-item">
-            <input type="checkbox">
-            <span class="checkmark"></span>
-            <span>Sudah bisa menggenggam mainan</span>
-        </label>
-    </div>
-
-    <div class="progress-badge" id="milestoneProgressText">
-    0/4 Terselesaikan
-</div>
-
-</div>
-
-            <!-- ARTIKEL -->
-            <div class="card artikel">
-
-    <h3>Rekomendasi untuk Mom</h3>
-
-    <div class="artikel-list">
-
-        <a href="/html/artikel.html" class="artikel-item">
-            <img src="/assets/gambar2.png">
-            <div class="artikel-text">
-                <p class="judul">5 cara menstimulasi motorik halus bayi</p>
-                <span class="kategori">Perkembangan Bayi</span>
+                    <a href="/html/calcullator-input.html">
+                        <button class="btn-main">Mulai hitung</button>
+                    </a>
+                </div>
             </div>
-        </a>
 
-        <a href="/html/artikel.html" class="artikel-item">
-            <img src="/assets/gambar3.png">
-            <div class="artikel-text">
-                <p class="judul">Panduan MPASI untuk pemula</p>
-                <span class="kategori">Nutrisi</span>
+            <div class="kalkulator-info">
+                <div class="info-item">
+                    <span>📅 Status</span>
+                    <b id="statusBulan">-</b>
+                </div>
+
+                <div class="info-item">
+                    <span>👶 Usia</span>
+                    <b id="usiaAnak">-</b>
+                </div>
+
+                <div class="info-item">
+                    <span>🔄 Update</span>
+                    <b id="updateTerakhir">-</b>
+                </div>
             </div>
-        </a>
+        </div>
+
+        <!-- MILESTONE -->
+        <div class="card milestone">
+            <h3>Checklist Milestone</h3>
+
+            <div class="milestone-list">
+                <label class="milestone-item">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>Sudah duduk tanpa bantuan</span>
+                </label>
+
+                <label class="milestone-item">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>Sudah merangkak</span>
+                </label>
+
+                <label class="milestone-item">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>Sudah merespon suara</span>
+                </label>
+
+                <label class="milestone-item">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>Sudah bisa menggenggam mainan</span>
+                </label>
+            </div>
+
+            <div class="progress-badge" id="milestoneProgressText">
+                0/4 Terselesaikan
+            </div>
+        </div>
 
     </div>
 
-    <a href="/html/artikel.html" class="lihat-artikel">
-        Lihat semua artikel →
-    </a>
-
-</div>
-
-        </section>
-
-    </main>
+</main>
+ 
 
     <script src="/js/homepage.js"></script>
     <script src="/js/sidebar.js"></script>

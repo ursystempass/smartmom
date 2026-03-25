@@ -1,49 +1,107 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "hero hero"
+        "reminder artikel"
+        "kalkulator milestone";
+    gap: 30px;
+}
+
+/* mapping posisi */
+.hero-image { grid-area: hero; }
+.reminder-panel { grid-area: reminder; }
+.artikel { grid-area: artikel; }
+.kalkulator { grid-area: kalkulator; }
+.milestone { grid-area: milestone; }
+
+
+
 body {
     margin-left:250px !important;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f3efff, #f8f6ff);
 }
 
-
-.dashboard-layout{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: start;
+.hero-image{
+    position: relative;
 }
-
 /* HERO */
-.hero {
-display: flex;
-grid-template-columns: 2fr 1fr;
-gap: 20px;
-align-items: stretch;
+body {
+    margin-left:250px !important;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3efff, #f8f6ff);
 }
 
 .hero-image img{
 width: 100%;
-flex: 1;
-height: 450px;
+height: 420px;
 object-fit: cover;
 border-radius: 25px;
+box-shadow: 0 20px 40px rgba(120,100,255,0.15);
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.7);
+    border-radius: 25px;
 }
 
 .card-reminder span {
 font-weight: 500;
 }
 
+.hero-overlay h1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-overlay p{
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3f2b96;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 15px;
+    color: #444;
+}
+
+
 .card-reminder small {
 color: #777;
 font-size: 11px;
 }
 
+
 .reminder-panel{
 background: linear-gradient(180deg,#cbb7ff,#e9e2ff);
 padding: 15px;
-flex: 1;
 font-size: 13px;
 border-radius:25px;
-width:389px;
+height: 420px;
+display: flex;
+flex-direction: column;
+width:100%;
 box-shadow:0 15px 30px rgba(0,0,0,0.1);
 }
 
@@ -94,6 +152,7 @@ border-radius:10px;
 margin-top:15px;
 position:relative;
 padding-left:20px;
+overflow-y: auto;
 }
 
 .timeline::before{
@@ -176,16 +235,6 @@ justify-content: space-between;
 font-size: 13px;
     margin-bottom: 5px;
 }
-
-
-
-.cards {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
-}
-
 
 .card {
     background: linear-gradient(180deg, #e9e2ff, #ddd2ff);
