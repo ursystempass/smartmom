@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - SmartMom</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/profile.css">
+
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -17,39 +20,39 @@
 
     <div class="menu">
         <div class="logo">
-            <img src="/assets/Logo_smartmom-removebg-preview.png">
+            <img src="../assets/Logo_smartmom-removebg-preview.png">
             <h3>SmartMom</h3>
         </div>
         
-        <a href="/html/homepage.html" class="menu-item">
-            <img src="/assets/icon home.png">
+        <a href="homepage.html" class="menu-item">
+            <img src="../assets/icon home.png">
             <span>Dashboard</span>
         </a>
 
-        <a href="/html/calcullator-input.html" class="menu-item">
-            <img src="/assets/icon kalku.png">
+        <a href="calcullator-input.html" class="menu-item">
+            <img src="../assets/icon kalku.png">
             <span>Kalkulator</span>
         </a>
 
-        <a href="/html/reminder.html" class="menu-item">
-            <img src="/assets/icon reminderr.png">
+        <a href="reminder.html" class="menu-item">
+            <img src="../assets/icon reminderr.png">
             <span>Reminder</span>
         </a>
 
-        <a href="/html/timeline.html" class="menu-item">
-            <img src="/assets/icon artikell.png">
+        <a href="timeline.html" class="menu-item">
+            <img src="../assets/icon artikell.png">
             <span>Timeline</span>
         </a>
 
-        <a href="/html/profile.html" class="menu-item active">
-            <img src="/assets/profile icon.png">
+        <a href="profile.html" class="menu-item active">
+            <img src="../assets/profile icon.png">
             <span>Profile</span>
         </a>
     </div>
 
     <div class="bottom">
         <a class="menu-item logout">
-            <img src="/assets/logout.png">
+            <img src="../assets/logout.png">
             <span>Log Out</span>
         </a>
     </div>
@@ -61,7 +64,7 @@
     <div class="profile-card">
 
         <div class="profile-left">
-            <img src="/assets/profile icon.png" class="profile-img"id="fotoProfile">
+            <img src="../assets/profile icon.png" class="profile-img" id="fotoProfile">
             <button class="btn-main" id="btnFoto">Ganti Foto</button>
             <input type="file" id="uploadFoto" hidden>
         </div>
@@ -112,133 +115,8 @@
 
 </div>
 
-<script src="/js/sidebar.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+<script src="../js/sidebar.js"></script>
+<script src="../js/profile.js"></script>
 
-    const nama = document.getElementById("nama");
-    const email = document.getElementById("email");
-    const namaAnak = document.getElementById("namaAnak");
-    const usiaAnak = document.getElementById("usiaAnak");
-    const totalReminder = document.getElementById("totalReminder");
-    const reminderSelesai = document.getElementById("reminderSelesai");
-
-    const btnSimpan = document.getElementById("btnSimpan");
-    const btnFoto = document.getElementById("btnFoto");
-    const uploadFoto = document.getElementById("uploadFoto");
-    const fotoProfile = document.getElementById("fotoProfile");
-
-    let modeEdit = true;
-
-    // =========================
-    // LOAD DATA
-    // =========================
-    const savedUser = JSON.parse(localStorage.getItem("profile")) || {};
-
-    if (savedUser.nama) {
-        nama.value = savedUser.nama;
-        email.value = savedUser.email;
-        namaAnak.value = savedUser.namaAnak;
-
-        if (savedUser.foto) {
-            fotoProfile.src = savedUser.foto;
-        }
-
-        setViewMode();
-    }
-
-    // =========================
-    // FOTO UPLOAD
-    // =========================
-    btnFoto.addEventListener("click", () => {
-        uploadFoto.click();
-    });
-
-    uploadFoto.addEventListener("change", function () {
-        const file = this.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            fotoProfile.src = e.target.result;
-
-            // simpan sementara
-            fotoProfile.dataset.temp = e.target.result;
-        };
-
-        reader.readAsDataURL(file);
-    });
-
-    // =========================
-    // SIMPAN DATA
-    // =========================
-    btnSimpan.addEventListener("click", () => {
-
-        if (!modeEdit) {
-            setEditMode();
-            return;
-        }
-
-        const data = {
-            nama: nama.value,
-            email: email.value,
-            namaAnak: namaAnak.value,
-            foto: fotoProfile.dataset.temp || fotoProfile.src
-        };
-
-        localStorage.setItem("profile", JSON.stringify(data));
-
-        setViewMode();
-    });
-
-    // =========================
-    // MODE VIEW
-    // =========================
-    function setViewMode() {
-        modeEdit = false;
-
-        nama.disabled = true;
-        email.disabled = true;
-        namaAnak.disabled = true;
-
-        btnSimpan.innerText = "Edit Profile";
-    }
-
-    // =========================
-    // MODE EDIT
-    // =========================
-    function setEditMode() {
-        modeEdit = true;
-
-        nama.disabled = false;
-        email.disabled = false;
-        namaAnak.disabled = false;
-
-        btnSimpan.innerText = "Simpan";
-    }
-
-    let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
-
-    totalReminder.value = reminders.length;
-
-    let doneCount = reminders.filter(r => r.done).length;
-
-    reminderSelesai.value = doneCount;
-
-    const user = JSON.parse(localStorage.getItem("smartmom_user"));
-
-if(user && user.anak && user.anak.tglLahir){
-    const lahir = new Date(user.anak.tglLahir);
-    const sekarang = new Date();
-
-    let usia =
-        (sekarang.getFullYear() - lahir.getFullYear()) * 12 +
-        (sekarang.getMonth() - lahir.getMonth());
-
-    usiaAnak.value = usia + " bulan";
-}
-});
-</script>
 </body>
 </html>
