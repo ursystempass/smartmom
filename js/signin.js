@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("popupLogin").classList.add("active");
 
             setTimeout(() => {
-window.location.href = "../html/homepage.html";            }, 1500);
+window.location.href = "/smartmom/html/homepage.html";
+            }, 1500);
 
         } else {
 
