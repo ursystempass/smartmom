@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusText = document.getElementById("statusMilestone");
     const progressBar = document.getElementById("progressBar");
 
-    const BASE = "../assets/";
+const BASE = "/smartmom/assets/";
 
     const milestones = {
         "0-3": [
