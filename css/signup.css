@@ -32,6 +32,7 @@ body {
     box-shadow: 0 20px 40px rgba(120, 100, 255, 0.15);
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .title {
@@ -147,35 +148,27 @@ label {
         top: 20px;
     }
 
-
     .outer-card {
         width: 90%;
         margin-top: 80px;
         padding: 30px;
     }
-
-
 }
 
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-
-
-    background: rgba(0, 0, 0, 0.4);
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
     align-items: center;
-
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
-    z-index: 999;
-
-
+    z-index: 9999;
 }
 
 .popup-overlay.active {
@@ -189,13 +182,9 @@ label {
     border-radius: 20px;
     text-align: center;
     width: 300px;
-
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
     transform: scale(0.8);
     transition: 0.3s;
-
 }
 
 .popup-overlay.active .popup-box {
