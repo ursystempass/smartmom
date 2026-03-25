@@ -1,88 +1,84 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SmartMom Login</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+<title>SmartMom Login</title>
 
-    <link rel="stylesheet" href="/css/sing in.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+<link rel="stylesheet" href="../css/signin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-purple-100">
 
-    <div class="logo-box">
-        <img src="/assets/Logo_smartmom-removebg-preview.png">
-        <span>SmartMom</span>
-    </div>
+<div class="logo-box">
+    <img src="../assets/Logo_smartmom-removebg-preview.png">
+    <span>SmartMom</span>
+</div>
 
-    <div class="outer-card">
+<div class="outer-card">
 
-        <img src="/assets/Logo_smartmom-removebg-preview.png" class="logo-center">
+    <img src="../assets/Logo_smartmom-removebg-preview.png" class="logo-center">
 
-        <h1 class="title">Welcome Back</h1>
-        <p class="subtitle">Masuk untuk memantau tumbuh kembang si kecil</p>
+    <h1 class="title">Welcome Back</h1>
+    <p class="subtitle">Masuk untuk memantau tumbuh kembang si kecil</p>
 
-        <div class="inner-card">
+    <div class="inner-card">
 
-            <form id="loginForm">
+        <form id="loginForm">
 
-                <label>Email</label>
-                <input type="email" id="email" class="input">
+            <label>Email</label>
+            <input type="email" id="email" class="input">
 
-                <label>Password</label>
+            <label>Password</label>
 
-                <div class="password-field">
+            <div class="password-field">
 
-                    <input type="password" id="password" class="input">
+                <input type="password" id="password" class="input">
 
-                    <button type="button" onclick="togglePassword()" class="show-pass">
-                        <i data-feather="eye" id="eyeIcon"></i>
-                    </button>
-
-                </div>
-
-                <button class="btn-login">
-                    Masuk
+                <button type="button" onclick="togglePassword()" class="show-pass">
+                    <i data-feather="eye" id="eyeIcon"></i>
                 </button>
 
-                <p class="login-text">
-                    Belum punya akun?
-                    <a href="/html/sign up.html">Daftar Sekarang</a>
-                </p>
+            </div>
 
-            </form>
-
-        </div>
-    </div>
-
-
-    <!-- POPUP -->
-    <div id="popupLogin" class="popup-overlay">
-
-        <div class="popup-card">
-
-            <div id="popupIcon" class="popup-icon">✓</div>
-
-            <h3 id="popupTitle">Login berhasil</h3>
-
-            <p id="popupText">Selamat datang di SmartMom</p>
-
-            <button onclick="goToHome()" class="popup-btn">
+            <button class="btn-login">
                 Masuk
             </button>
 
-        </div>
+            <p class="login-text">
+                Belum punya akun?
+                <a href="sign up.html">Daftar Sekarang</a>
+            </p>
+
+        </form>
+
     </div>
+</div>
 
+<div id="popupLogin" class="popup-overlay">
+    <div class="popup-card">
+        <div id="popupIcon" class="popup-icon">✓</div>
+        <h3 id="popupTitle">Login berhasil</h3>
+        <p id="popupText">Selamat datang di SmartMom</p>
 
-   <script src="/js/sign in.js"></script>
+        <button onclick="goToHome()" class="popup-btn">
+            Masuk
+        </button>
+    </div>
+</div>
+
+<script src="../js/sign in.js"></script>
+
 
 </body>
 
