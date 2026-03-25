@@ -1,23 +1,9 @@
-function showErrorPopup(message) {
-    document.getElementById("errorMessage").textContent = message;
-    document.getElementById("errorPopup").classList.add("active");
-}
-
-function closeErrorPopup() {
-    document.getElementById("errorPopup").classList.remove("active");
-}
-
-function showSuccessPopup() {
-    document.getElementById("popupRegister").classList.add("active");
-
-    setTimeout(() => {
-        window.location.href = "signin.html";
-    }, 3000);
-}
-
 document.addEventListener("DOMContentLoaded", function () {
 
+    const BASE = "/smartmom/html/";
+
     const form = document.getElementById("registerForm");
+    if (!form) return;
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -53,13 +39,51 @@ document.addEventListener("DOMContentLoaded", function () {
         showSuccessPopup();
     });
 
+    if (window.feather) {
+        feather.replace();
+    }
+
 });
 
-feather.replace();
+
+function showErrorPopup(message) {
+    const popup = document.getElementById("errorPopup");
+    const text = document.getElementById("errorMessage");
+
+    if (!popup || !text) return;
+
+    text.textContent = message;
+    popup.classList.add("active");
+
+    setTimeout(() => {
+        popup.classList.remove("active");
+    }, 2000);
+}
+
+
+function closeErrorPopup() {
+    const popup = document.getElementById("errorPopup");
+    if (popup) popup.classList.remove("active");
+}
+
+
+function showSuccessPopup() {
+    const popup = document.getElementById("popupRegister");
+    if (!popup) return;
+
+    popup.classList.add("active");
+
+    setTimeout(() => {
+        window.location.href = "/smartmom/html/sign in.html";
+    }, 1500);
+}
+
 
 function togglePassword() {
     const password = document.getElementById("password");
     const icon = document.getElementById("eyeIcon");
+
+    if (!password || !icon) return;
 
     if (password.type === "password") {
         password.type = "text";
@@ -69,9 +93,12 @@ function togglePassword() {
         icon.setAttribute("data-feather", "eye");
     }
 
-    feather.replace();
+    if (window.feather) {
+        feather.replace();
+    }
 }
 
+
 function goToLogin() {
-    window.location.href = "signin.html";
+    window.location.href = "/smartmom/html/sign in.html";
 }
