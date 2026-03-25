@@ -5,30 +5,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusText = document.getElementById("statusMilestone");
     const progressBar = document.getElementById("progressBar");
 
+    const BASE = "../assets/";
+
     const milestones = {
         "0-3": [
-            { title: "Mengangkat Kepala", img: "/smartmom/assets/bayi-mengangkat-kepala.png" },
-            { title: "Tersenyum", img: "/smartmom/assets/bayi-tersenyum.png" },
-            { title: "Mengikuti Objek", img: "/smartmom/assets/bayi-mengikuti-objek.png" },
-            { title: "Mengoceh", img: "/smartmom/assets/bayi-mengoceh.png" }
+            { title: "Mengangkat Kepala", img: BASE + "bayi mengangkat kepala.png" },
+            { title: "Tersenyum", img: BASE + "bayi tersenyum.png" },
+            { title: "Mengikuti Objek", img: BASE + "bayi mengikuti objek.png" },
+            { title: "Mengoceh", img: BASE + "bayi mengoceh.png" }
         ],
         "4-6": [
-            { title: "Tengkurap Stabil", img: "/smartmom/assets/bayi-tengkurap.png" },
-            { title: "Membalikkan Badan", img: "/smartmom/assets/bayi-membalikkan-badan.png" },
-            { title: "Meraih Benda", img: "/smartmom/assets/bayi-meraih-benda.png" },
-            { title: "Mengoceh Aktif", img: "/smartmom/assets/bayi-mengoceh-aktif.png" }
+            { title: "Tengkurap Stabil", img: BASE + "bayi tengkurap.png" },
+            { title: "Membalikkan Badan", img: BASE + "bayi membalikkan badan.png" },
+            { title: "Meraih Benda", img: BASE + "bayi meraih benda.png" },
+            { title: "Mengoceh Aktif", img: BASE + "bayi mengoceh aktiv.png" }
         ],
         "7-9": [
-            { title: "Duduk Sendiri", img: "/smartmom/assets/bayi-duduk.png" },
-            { title: "Merangkak", img: "/smartmom/assets/bayi-merangkak.png" },
-            { title: "Memindahkan Benda", img: "/smartmom/assets/bayi-memindahkan-benda.png" },
-            { title: "Meniru Suara", img: "/smartmom/assets/bayi-meniru-suara.png" }
+            { title: "Duduk Sendiri", img: BASE + "bayi duduk.png" },
+            { title: "Merangkak", img: BASE + "bayi merangkak.png" },
+            { title: "Memindahkan Benda", img: BASE + "bayi memindahkan benda.png" },
+            { title: "Meniru Suara", img: BASE + "bayi meniru suara.png" }
         ],
         "10-12": [
-            { title: "Berdiri", img: "/smartmom/assets/bayi-berdiri.png" },
-            { title: "Melambaikan Tangan", img: "/smartmom/assets/bayi-melambaikan-tangan.png" },
-            { title: "Memanggil Mama", img: "/smartmom/assets/bayi-memanggil-mama.png" },
-            { title: "Belajar Jalan", img: "/smartmom/assets/bayi-belajar-jalan.png" }
+            { title: "Berdiri", img: BASE + "bayi berdiri.png" },
+            { title: "Melambaikan Tangan", img: BASE + "bayi melambaikan tangan.png" },
+            { title: "Memanggil Mama", img: BASE + "bayi mengucapkan mama atau papa.png" },
+            { title: "Belajar Jalan", img: BASE + "bayi belajar jalan.png" }
         ]
     };
 
