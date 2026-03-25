@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // AUTO REDIRECT
             setTimeout(() => {
-                window.location.href = "/html/homepage.html";
-            }, 1500);
+window.location.href = "../html/homepage.html";            }, 1500);
 
         } else {
 
