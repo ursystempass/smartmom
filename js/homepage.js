@@ -1,26 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       CEK LOGIN
-    ========================= */
+    const BASE = "/smartmom/html/";
 
     const loginStatus = localStorage.getItem("login_status");
 
-    if (!loginStatus) {
-        window.location.href = "/html/sign in.html";
+    if (loginStatus !== "true") {
+        window.location.href = BASE + "sign in.html";
         return;
     }
 
     const user = JSON.parse(localStorage.getItem("smartmom_user"));
 
     if (!user) {
-        window.location.href = "/html/sign in.html";
+        window.location.href = BASE + "sign in.html";
         return;
     }
-
-    /* =========================
-       GREETING USER
-    ========================= */
 
     const logoText = document.querySelector(".logo span");
 
@@ -28,132 +22,54 @@ document.addEventListener("DOMContentLoaded", function () {
         logoText.innerText = "Hi, " + user.nama;
     }
 
-    /* =========================
-       LOAD REMINDER PANEL (FIX)
-    ========================= */
-
     const timelineList = document.getElementById("timelineList");
-    const progressText = document.getElementById("progressText");
-    const progressFill = document.getElementById("progressFill");
-
-    // Kalau belum ada data reminder → buat default
-    if (!localStorage.getItem("reminders")) {
-        const defaultReminders = [
-    {
-        judul: "Belum isi kalkulator bulan ini",
-        tanggal: "28 January",
-        done: false
-    },
-    {
-        judul: "Update berat badan bulan ini",
-        tanggal: "-",
-        done: true
-    },
-    {
-        judul: "Bulan ini fokus stimulasi merangkak",
-        tanggal: "-",
-        done: false
-    }
-];
-
-        localStorage.setItem("reminders", JSON.stringify(defaultReminders));
-    }
-
-    const reminders = JSON.parse(localStorage.getItem("reminders"));
-
-    if (timelineList && reminders) {
-
-        timelineList.innerHTML = ""; // supaya tidak double
-
-        let doneCount = 0;
-
-        reminders.forEach(item => {
-
-            if (item.status === "done") {
-                doneCount++;
-            }
-
-            // Ubah text badge
-            let badgeText = item.status;
-            if (item.status === "done") badgeText = "Selesai";
-            if (item.status === "pending") badgeText = "Pending";
-            if (item.status === "priority") badgeText = "Prioritas";
-
-           timelineList.innerHTML += `
-                 <div class="timeline-item">
-                 <div class="circle ${item.done ? 'done' : ''}"></div>
-
-                    <div class="card-reminder">
-                <div>
-                      ${item.judul}
-                     <div class="date">${item.tanggal}</div>
-                    </div>
-
-                 <span class="badge ${item.done ? 'done' : 'pending'}">
-            ${item.done ? 'Selesai' : 'Pending'}
-        </span>
-    </div>
-</div>
-`;
-        });
-
-        // Progress
-        if (progressText) {
-            progressText.innerText = `${doneCount} dari ${reminders.length} selesai`;
-        }
-
-        if (progressFill) {
-            let percent = (doneCount / reminders.length) * 100;
-            progressFill.style.width = percent + "%";
-        }
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-
-    const timeline = document.getElementById("timelineList");
     const progressText = document.getElementById("progressText");
     const progressFill = document.getElementById("progressFill");
 
     let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
 
-    timeline.innerHTML = "";
-
     if (reminders.length === 0) {
-        timeline.innerHTML = "<p style='color:#777;'>Belum ada reminder</p>";
-        return;
+        reminders = [
+            { judul: "Belum isi kalkulator bulan ini", tanggal: "28 January", done: false },
+            { judul: "Update berat badan bulan ini", tanggal: "-", done: true },
+            { judul: "Fokus stimulasi merangkak", tanggal: "-", done: false }
+        ];
+        localStorage.setItem("reminders", JSON.stringify(reminders));
     }
 
-    let doneCount = 0;
+    if (timelineList) {
+        timelineList.innerHTML = "";
 
-    reminders.slice(0, 5).forEach(reminder => {
+        let doneCount = 0;
 
-        if (reminder.done) doneCount++;
+        reminders.slice(0, 5).forEach(reminder => {
 
-        const item = document.createElement("div");
-        item.classList.add("timeline-item");
+            if (reminder.done) doneCount++;
 
-        item.innerHTML = `
-            <div class="circle ${reminder.done ? "done" : ""}"></div>
+            const item = document.createElement("div");
+            item.classList.add("timeline-item");
 
-            <div class="card-reminder">
-                <span>${reminder.judul}</span>
-                <small>${reminder.tanggal}</small>
-            </div>
-        `;
+            item.innerHTML = `
+                <div class="circle ${reminder.done ? "done" : ""}"></div>
 
-        timeline.appendChild(item);
-    });
+                <div class="card-reminder">
+                    <span>${reminder.judul}</span>
+                    <small>${reminder.tanggal}</small>
+                </div>
+            `;
 
-    // PROGRESS
-    progressText.innerText = `${doneCount} dari ${reminders.length} selesai`;
+            timelineList.appendChild(item);
+        });
 
-    const percent = (doneCount / reminders.length) * 100;
-    progressFill.style.width = percent + "%";
+        if (progressText) {
+            progressText.innerText = `${doneCount} dari ${reminders.length} selesai`;
+        }
 
-});
-
-    /* =========================
-       DATA ANAK
-    ========================= */
+        if (progressFill) {
+            const percent = (doneCount / reminders.length) * 100;
+            progressFill.style.width = percent + "%";
+        }
+    }
 
     const data = user.anak;
 
@@ -162,52 +78,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!data || !data.tglLahir || !data.pengukuran) {
 
-    if (emptyState) emptyState.style.display = "block";
-    if (cardsSection) cardsSection.style.display = "none";
+        if (emptyState) emptyState.style.display = "block";
+        if (cardsSection) cardsSection.style.display = "none";
 
-} else {
+    } else {
 
-    if (emptyState) emptyState.style.display = "none";
-    if (cardsSection) cardsSection.style.display = "grid";
+        if (emptyState) emptyState.style.display = "none";
+        if (cardsSection) cardsSection.style.display = "grid";
 
-    const lahir = new Date(data.tglLahir);
-    const sekarang = new Date();
+        const lahir = new Date(data.tglLahir);
+        const sekarang = new Date();
 
-    let usiaBulan =
-        (sekarang.getFullYear() - lahir.getFullYear()) * 12 +
-        (sekarang.getMonth() - lahir.getMonth());
+        let usiaBulan =
+            (sekarang.getFullYear() - lahir.getFullYear()) * 12 +
+            (sekarang.getMonth() - lahir.getMonth());
 
-    const usiaEl = document.getElementById("usiaAnak");
+        const usiaEl = document.getElementById("usiaAnak");
 
-    if (usiaEl) {
-        usiaEl.innerText = usiaBulan + " bulan";
-    }
+        if (usiaEl) {
+            usiaEl.innerText = usiaBulan + " bulan";
+        }
 
-    if (data.pengukuran && data.pengukuran.length > 0) {
+        if (data.pengukuran && data.pengukuran.length > 0) {
+            const terakhir = data.pengukuran[data.pengukuran.length - 1];
 
-        const terakhir = data.pengukuran[data.pengukuran.length - 1];
+            const updateEl = document.getElementById("updateTerakhir");
 
-        const updateEl = document.getElementById("updateTerakhir");
-
-        if (updateEl) {
-            updateEl.innerText = terakhir.tgl;
+            if (updateEl) {
+                updateEl.innerText = terakhir.tgl;
+            }
         }
     }
-}
-function initMilestone() {
-    const total = document.querySelectorAll(".milestone-item input").length;
-    const checked = document.querySelectorAll(".milestone-item input:checked").length;
-    const progressText = document.getElementById("milestoneProgressText");
 
-    if (progressText) {
-        progressText.textContent = `${checked}/${total} Terselesaikan`;
+    function initMilestone() {
+        const total = document.querySelectorAll(".milestone-item input").length;
+        const checked = document.querySelectorAll(".milestone-item input:checked").length;
+        const progressText = document.getElementById("milestoneProgressText");
+
+        if (progressText) {
+            progressText.textContent = `${checked}/${total} Terselesaikan`;
+        }
     }
-}
 
-initMilestone();
-    /* =========================
-       LOGOUT SYSTEM
-    ========================= */
+    initMilestone();
 
     const logoutBtn = document.getElementById("logoutBtn");
     const popup = document.getElementById("logoutPopup");
@@ -215,34 +128,25 @@ initMilestone();
     const confirmBtn = document.getElementById("confirmLogout");
 
     if (logoutBtn && popup) {
-        logoutBtn.addEventListener("click", function () {
-            popup.classList.add("active");
-        });
+        logoutBtn.addEventListener("click", () => popup.classList.add("active"));
     }
 
     if (cancelBtn && popup) {
-        cancelBtn.addEventListener("click", function () {
-            popup.classList.remove("active");
-        });
+        cancelBtn.addEventListener("click", () => popup.classList.remove("active"));
     }
 
     if (confirmBtn) {
         confirmBtn.addEventListener("click", function () {
             localStorage.removeItem("login_status");
-            window.location.href = "/html/landingpage.html";
+            window.location.href = BASE + "landingpage.html";
         });
     }
-
-    /* =========================
-       SIDEBAR ACTIVE
-    ========================= */
 
     const menuItems = document.querySelectorAll(".menu-item");
     const currentPage = window.location.pathname.split("/").pop();
 
     menuItems.forEach(item => {
         const link = item.getAttribute("href");
-
         if (link && link.includes(currentPage)) {
             item.classList.add("active");
         }
