@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const BASE = "/smartmom/html/";
-
+const BASE = "";
     const form = document.getElementById("registerForm");
     if (!form) return;
 
@@ -74,8 +73,7 @@ function showSuccessPopup() {
     popup.classList.add("active");
 
     setTimeout(() => {
-        window.location.href = "/smartmom/html/sign in.html";
-    }, 1500);
+window.location.href = "sign in.html";    }, 1500);
 }
 
 
