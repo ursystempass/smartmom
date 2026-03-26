@@ -326,3 +326,19 @@ nav {
     align-items: center;
   }
 }
+@media (max-width: 400px) {
+
+  .brand-name {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .btn-login,
+  .btn-signup {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
