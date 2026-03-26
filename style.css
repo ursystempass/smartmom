@@ -286,3 +286,43 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
